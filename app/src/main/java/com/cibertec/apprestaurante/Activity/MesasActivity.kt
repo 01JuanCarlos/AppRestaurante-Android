@@ -1,0 +1,42 @@
+package com.cibertec.apprestaurante.Activity
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.cibertec.apprestaurante.Adapter.MesaAdapter
+import com.cibertec.apprestaurante.Model.Mesa
+import com.cibertec.apprestaurante.R
+
+class MesasActivity : AppCompatActivity(){
+
+    private val listMesa= listOf(
+        Mesa(1,"Juan Miranda"),
+        Mesa(2,"Tony Estrella"),
+        Mesa(3,"Andres"),
+        Mesa(4,"Pepe"),
+        Mesa(5,"Miguel"),
+        Mesa(6,"Raul"),
+        Mesa(7,"Pepe"),
+        Mesa(8,"Miguel"),
+        Mesa(9,"Raul"),
+        Mesa(10,"Pepe"),
+        Mesa(11,"Miguel"),
+        Mesa(12,"Raul"),
+
+    )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_mesas)
+
+        val recyclerNews = findViewById<RecyclerView>(R.id.recyclerNews)
+        recyclerNews.apply {
+            // layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            // layoutManager = GridLayoutManager(context, 2)
+            layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
+            adapter = MesaAdapter(listMesa)
+        }
+    }
+}

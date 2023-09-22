@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="green">#23F24F</color>
     <color name="seed">#42a5f1</color>
     <color name="md_theme_light_primary">#42a5f1</color>
-    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#CEE5FF</color>
     <color name="md_theme_light_onPrimaryContainer">#001D33</color>
     <color name="md_theme_light_secondary">#00639B</color>

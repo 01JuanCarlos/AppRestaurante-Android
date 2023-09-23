@@ -1,6 +1,11 @@
 package com.cibertec.apprestaurante.Activity
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,5 +43,32 @@ class MesasActivity : AppCompatActivity(){
             layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
             adapter = MesaAdapter(listMesa)
         }
+        val btnLogin = findViewById<ImageView>(R.id.imageButton6)
+        btnLogin.setOnClickListener {
+            alertWithDesignCustom()
+        }
     }
+    fun alertWithDesignCustom() {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Alerta con Diseño Personalizado")
+
+        val inflater = layoutInflater
+        val dialogLayout = inflater.inflate(R.layout.alert, null)
+        builder.setView(dialogLayout)
+
+        val edtTitle = dialogLayout.findViewById<EditText>(R.id.edtTitleNote)
+        val btnCreate = dialogLayout.findViewById<Button>(R.id.btnCreate)
+
+        val mAlertDialog = builder.show()
+
+        btnCreate.setOnClickListener {
+            val title = edtTitle.text.toString()
+            Toast.makeText(this, title, Toast.LENGTH_LONG).show()
+
+            mAlertDialog.dismiss()
+        }
+
+    }
+
 }

@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="63dp"
-        android:layout_height="59dp"
-        android:layout_margin="16dp"
-        android:src="@drawable/baseline_add_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945"
-        tools:ignore="MissingConstraints"
-        />
+    android:background="#FFFFFF">
+
+
+
+
+
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -27,19 +21,20 @@
 
 
         <androidx.appcompat.widget.Toolbar
-            android:background="@color/seed"
             android:id="@+id/toolbar_top"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@color/seed">
 
             <TextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Mesas"
-                android:textSize="25dp"
                 android:textColor="@color/white"
-                android:layout_gravity="center" />
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -47,12 +42,50 @@
             android:id="@+id/recyclerNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:itemCount="4"
+            android:layout_marginTop="40dp"
+            tools:itemCount="5"
             tools:listitem="@layout/items_news" />
 
 
-    </LinearLayout>
 
+    </LinearLayout>
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="72dp"
+        android:layout_height="55dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001" />
+    <ImageButton
+        android:elevation="20dp"
+        android:id="@+id/imageButton6"
+        android:layout_width="95dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/btn_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_add_24" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="61dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/baseline_menu_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

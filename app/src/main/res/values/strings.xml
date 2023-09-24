@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">AppRestaurante</string>
+    
+    <string name="btnMeesero">Mesero</string>
+    <string name="btnCocinero">Cocinero</string>
+
+    <string name="textTituloAdmi">Administrar</string>
+    <string name="textTituloPedidos">Pedidos pendientes</string>
+    <string name="textTituloCocina">Cocina</string>
+
+    <string name="btnEntregar">Entregar</string>
+
+
+    <string name="mesa1">Mesa 01</string>
+
+    <string name="btnAgrCategorias">Agregar Categorías</string>
+    <string name="btnAgrPlatos">Agregar Platos</string>
+    
 </resources>

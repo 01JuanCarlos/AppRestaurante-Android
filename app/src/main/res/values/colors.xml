@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="morado">#650AFD</color>
+    <color name="cheleste">#2D9BF0</color>
+
+
+
 </resources>

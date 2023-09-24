@@ -30,4 +30,13 @@
 
 
     <style name="Theme.AppRestaurante" parent="AppTheme" />
+
+    <style name="Theme.AppRestaurante.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AppRestaurante.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AppRestaurante.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

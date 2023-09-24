@@ -43,8 +43,8 @@ class MesasActivity : AppCompatActivity(){
             layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
             adapter = MesaAdapter(listMesa)
         }
-        val btnLogin = findViewById<ImageView>(R.id.imageButton6)
-        btnLogin.setOnClickListener {
+        val btnAdd = findViewById<ImageView>(R.id.imageButton6)
+        btnAdd.setOnClickListener {
             alertWithDesignCustom()
         }
     }

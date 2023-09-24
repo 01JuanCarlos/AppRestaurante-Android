@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -39,11 +40,11 @@ class MesasActivity : AppCompatActivity(){
         val recyclerNews = findViewById<RecyclerView>(R.id.recyclerNews)
         recyclerNews.apply {
             // layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            // layoutManager = GridLayoutManager(context, 2)
-            layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
+            layoutManager = GridLayoutManager(context, 2)
+           // layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
             adapter = MesaAdapter(listMesa)
         }
-        val btnAdd = findViewById<ImageView>(R.id.imageButton6)
+        val btnAdd = findViewById<ImageView>(R.id.btn_add)
         btnAdd.setOnClickListener {
             alertWithDesignCustom()
         }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/cheleste"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/texBar"
+        android:layout_width="403dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="@string/textTituloAdmi"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnPlatos"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/morado"
+        android:text="@string/btnAgrPlatos"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCategoria" />
+
+    <Button
+        android:id="@+id/btnCategoria"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/morado"
+        android:text="@string/btnAgrCategorias"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -16,18 +16,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+
     <TextView
 
         android:id="@+id/texBar"
         android:layout_width="398dp"
         android:layout_height="52dp"
-        android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Seleccion de Rol"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="16dp" />
+
     <ImageView
         android:id="@+id/btn_menu"
         android:layout_width="91dp"

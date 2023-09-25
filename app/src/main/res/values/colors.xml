@@ -66,6 +66,7 @@
 
      <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="morado">#650AFD</color>
     <color name="cheleste">#2D9BF0</color>
 </resources>
@@ -74,4 +75,9 @@
 
 
 
+
+
+    <color name="skyblue">#03A9F4</color>
+    <color name="gray">#8D8D8D</color>
+</resources>
 

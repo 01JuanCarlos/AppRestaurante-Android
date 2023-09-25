@@ -10,10 +10,13 @@ class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         //setContentView(R.layout.activity_mesas)
        setContentView(R.layout.activity_rol)
 
-    }
+
+        //setContentView(R.layout.item_foods)
+  }
 
 
 }

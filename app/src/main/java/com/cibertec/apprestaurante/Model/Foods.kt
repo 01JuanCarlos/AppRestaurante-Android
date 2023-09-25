@@ -1,4 +1,4 @@
-package com.cibertec.apprestaurante
+package com.cibertec.apprestaurante.Model
 
 data class Foods(
     val image: Int,

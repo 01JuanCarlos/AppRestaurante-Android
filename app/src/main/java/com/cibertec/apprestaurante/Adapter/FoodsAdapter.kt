@@ -1,8 +1,10 @@
-package com.cibertec.apprestaurante
+package com.cibertec.apprestaurante.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.cibertec.apprestaurante.ViewHolder.FoodsViewHolder
+import com.cibertec.apprestaurante.Model.Foods
 
 class FoodsAdapter(val list: List<Foods>):
     RecyclerView.Adapter<FoodsViewHolder>() {

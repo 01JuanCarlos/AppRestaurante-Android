@@ -1,9 +1,12 @@
-package com.cibertec.apprestaurante
+package com.cibertec.apprestaurante.Activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cibertec.apprestaurante.Adapter.FoodsAdapter
+import com.cibertec.apprestaurante.Model.Foods
+import com.cibertec.apprestaurante.R
 
 class FoodsActiviity: AppCompatActivity() {
 

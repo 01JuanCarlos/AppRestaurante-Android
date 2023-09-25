@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.Model.Mesa
-import com.cibertec.apprestaurante.models.Cocina
 import com.cibertec.apprestaurante.viewholder.ViewHolderCocina
 
 class CocinaAdapter(val list: List<Mesa>):

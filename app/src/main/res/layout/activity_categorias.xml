@@ -42,7 +42,7 @@
         android:gravity="center"
         android:layout_marginTop="70dp">
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btncate"
             style="@style/Widget.Material3.Button.Icon"
             android:layout_width="374dp"
             android:layout_height="81dp"

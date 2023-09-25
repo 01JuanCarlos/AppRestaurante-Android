@@ -46,6 +46,12 @@ class MesasActivity : AppCompatActivity(){
             adapter = MesaAdapter(listMesa)
         }
 
+
+        val btn_food = findViewById<Button>(R.id.siguiente)
+        btn_food.setOnClickListener {
+            startActivity(Intent(this, CategoriasActivity:: class.java))
+        }
+
         val btnmenu = findViewById<ImageView>(R.id.btn_menu)
         btnmenu.setOnClickListener {
             startActivity(Intent(this, AdministracionActivity:: class.java))

@@ -1,11 +1,12 @@
-package com.cibertec.apprestaurante
+package com.cibertec.apprestaurante.ViewHolder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.ViewParent
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.cibertec.apprestaurante.Model.Foods
+import com.cibertec.apprestaurante.R
 
 class FoodsViewHolder (inflater: LayoutInflater, parent: ViewGroup):
 RecyclerView.ViewHolder(inflater.inflate(R.layout.item_foods, parent, false)){
@@ -21,7 +22,7 @@ RecyclerView.ViewHolder(inflater.inflate(R.layout.item_foods, parent, false)){
         textDescription = itemView.findViewById(R.id.textDesc)
     }
 
-    fun bind(foods:Foods){
+    fun bind(foods: Foods){
         imgFood?.setImageResource(foods.image)
         textTitle?.text = foods.title
         textPrice?.text = foods.price

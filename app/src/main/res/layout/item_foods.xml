@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray"
+
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+
                     android:id="@+id/textTit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -36,7 +37,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="Jugo de Papaya"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
                 <TextView
@@ -47,9 +48,10 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:ellipsize="end"
+                    android:textSize="16dp"
                     android:maxLines="1"
                     android:text="S/ 10.00"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/textDesc"
@@ -62,7 +64,7 @@
                     android:ellipsize="end"
                     android:maxLines="5"
                     android:text="Jugo de papaya con trozos de manzana y platano"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>

@@ -1,4 +1,4 @@
-package com.cibertec.apprestaurante.models
+package com.cibertec.apprestaurante.Model
 
 data class Cocina(
 

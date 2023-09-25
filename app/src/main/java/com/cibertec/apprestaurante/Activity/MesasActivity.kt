@@ -49,13 +49,10 @@ class MesasActivity : AppCompatActivity(){
 
         val btn_food = findViewById<Button>(R.id.siguiente)
         btn_food.setOnClickListener {
-            startActivity(Intent(this, CategoriasActivity:: class.java))
+            startActivity(Intent(this, ConsumoActivity:: class.java))
         }
 
-        val btnmenu = findViewById<ImageView>(R.id.btn_menu)
-        btnmenu.setOnClickListener {
-            startActivity(Intent(this, AdministracionActivity:: class.java))
-        }
+
         val btnAdd = findViewById<ImageView>(R.id.btn_add)
         btnAdd.setOnClickListener {
             alertWithDesignCustom()

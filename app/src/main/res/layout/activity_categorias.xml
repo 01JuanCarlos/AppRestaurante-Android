@@ -5,36 +5,41 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <include
+        android:id="@+id/app_bar_menu"
+        layout="@layout/app_bar_menu"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/skyblue"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" />
     <TextView
         android:id="@+id/texBar"
-        android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="CATEGORIAS"
+        android:text="Seleccion de Rol"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints" />
+
     <ImageView
-        android:id="@+id/icon"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:src="@drawable/baseline_home_24"
+        android:id="@+id/btn_menu"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_menu_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+        app:layout_constraintVertical_bias="0.011"
+        tools:ignore="MissingConstraints" />
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -13,6 +13,12 @@ class FoodsActiviity: AppCompatActivity() {
     private val listFoods = listOf(
         Foods(R.drawable.papaya,"Jugo de Papaya","S/15.00","Papaya con trosos de platano"),
         Foods(R.drawable.ensalada,"Ensalada de Frutas","S/15.00","Ensalada de frutas con cereal y jugo de naranaj"),
+        Foods(R.drawable.palta,"Ensalada de Palta","S/20.00","Palta con pan y jugo de manzana"),
+                Foods(R.drawable.papaya,"Jugo de Papaya","S/15.00","Papaya con trosos de platano"),
+    Foods(R.drawable.ensalada,"Ensalada de Frutas","S/15.00","Ensalada de frutas con cereal y jugo de naranaj"),
+    Foods(R.drawable.palta,"Ensalada de Palta","S/20.00","Palta con pan y jugo de manzana"),
+        Foods(R.drawable.papaya,"Jugo de Papaya","S/15.00","Papaya con trosos de platano"),
+        Foods(R.drawable.ensalada,"Ensalada de Frutas","S/15.00","Ensalada de frutas con cereal y jugo de naranaj"),
         Foods(R.drawable.palta,"Ensalada de Palta","S/20.00","Palta con pan y jugo de manzana")
     )
     override fun onCreate(savedInstanceState: Bundle?) {

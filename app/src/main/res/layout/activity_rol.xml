@@ -17,58 +17,115 @@
         android:layout_height="wrap_content"
         />
 
-    <TextView
 
+    <TextView
         android:id="@+id/texBar"
-        android:layout_width="398dp"
-        android:layout_height="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Seleccion de Rol"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/btn_menu"
-        android:layout_width="91dp"
-        android:layout_height="46dp"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
         android:src="@drawable/baseline_menu_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnMesero"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#650AFD"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
-        app:layout_constraintVertical_bias="0.419"
-        tools:layout_editor_absoluteX="40dp">
+        app:layout_constraintVertical_bias="0.428"
+        tools:ignore="MissingConstraints" />
 
-        <Button
+    <Button
+        android:id="@+id/btncocinero"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#650AFD"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
+        app:layout_constraintVertical_bias="0.577"
+        tools:ignore="MissingConstraints" />
 
-            android:id="@+id/btnMesero"
-            android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:backgroundTint="@color/green"
-            android:text="Mesero"
-            android:textSize="30dp" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Cocinero"
+        android:textColor="@color/white"
 
-        <Button
-            android:id="@+id/btncocinero"
-            android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@color/green"
-            android:text="Cocinero"
-            android:textSize="30dp" />
+        android:textSize="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57" />
 
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="76dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577"
+        app:srcCompat="@drawable/cocinero" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="82dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423"
+        app:srcCompat="@drawable/mesero" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Mesero"
+        android:textColor="@color/white"
+        android:textSize="29dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,16 +23,13 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
-
-
-
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="112dp"
+        android:layout_height="14dp"
+        android:layout_marginLeft="250dp"
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="center" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

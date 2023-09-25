@@ -38,30 +38,32 @@
     </LinearLayout>
     <ImageView
         android:id="@+id/btn_menu"
-        android:layout_width="91dp"
-        android:layout_height="46dp"
-
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_menu_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.000005"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/baseline_menu_24" />
+        app:layout_constraintVertical_bias="0.011"
+        tools:ignore="MissingConstraints" />
 
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/texBar"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Mesas"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints" />
     <ImageButton
         android:id="@+id/btn_add"
         android:layout_width="86dp"

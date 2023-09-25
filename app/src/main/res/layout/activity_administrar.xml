@@ -20,44 +20,63 @@
 
     <TextView
         android:id="@+id/texBar"
-        android:layout_width="403dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/textTituloAdmi"
+        android:text="Administrar"
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/btn_menu"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_menu_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btnPlatos"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/morado"
-        android:text="@string/btnAgrPlatos"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCategoria" />
 
-    <Button
-        android:id="@+id/btnCategoria"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="@color/morado"
-        android:text="@string/btnAgrCategorias"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_menu" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
+        app:layout_constraintVertical_bias="0.419"
+        tools:layout_editor_absoluteX="40dp">
+
+        <Button
+            android:elevation="50dp"
+            android:id="@+id/btn_add_categori"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:backgroundTint="#650AFD"
+            android:text="Agregar Categorias"
+            android:textSize="24dp" />
+
+        <Button
+            android:elevation="50dp"
+            android:id="@+id/btn_add_platos"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#650AFD"
+            android:text="Agregar Platos"
+            android:textSize="24dp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

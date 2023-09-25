@@ -28,6 +28,9 @@
         <activity android:name=".Activity.CocinaActivity"/>
         <activity android:name=".activity.PedidosActivity"/>
         <activity android:name=".Activity.RolActivity"/>
+        <activity android:name=".Activity.ConsumoActivity"/>
+        <activity android:name=".Activity.AddcategoriasActivity"/>
+        <activity android:name=".Activity.AddplatosActivity"/>
 
 
     </application>

@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.Model.Mesa
 import com.cibertec.apprestaurante.ViewHolder.MesaViewHolder
 
-class MesaAdapter(val list: List<Mesa>): RecyclerView.Adapter<MesaViewHolder>()  {
+class MesaAdapter(val list: List<Mesa>):
+    RecyclerView.Adapter<MesaViewHolder>()  {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MesaViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return MesaViewHolder(inflater, parent)

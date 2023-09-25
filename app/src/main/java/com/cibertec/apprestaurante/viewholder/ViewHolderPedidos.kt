@@ -6,11 +6,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.R
-import com.cibertec.apprestaurante.models.Pedidos
+import com.cibertec.apprestaurante.Model.Pedidos
 
 class ViewHolderPedidos (inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(
-        R.layout.pedidospendientes_activity, parent,
+        R.layout.item_platos, parent,
         false))
 {
     private var imgPedido: ImageView? = null

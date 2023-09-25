@@ -3,7 +3,7 @@ package com.cibertec.apprestaurante.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.cibertec.apprestaurante.models.Pedidos
+import com.cibertec.apprestaurante.Model.Pedidos
 import com.cibertec.apprestaurante.viewholder.ViewHolderPedidos
 
 class PedidosAdapter(val list: List<Pedidos>):

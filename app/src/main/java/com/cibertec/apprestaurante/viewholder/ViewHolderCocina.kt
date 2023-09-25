@@ -4,29 +4,27 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.cibertec.apprestaurante.Model.Mesa
 import com.cibertec.apprestaurante.R
-import com.cibertec.apprestaurante.models.Cocina
 
 class ViewHolderCocina(inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(
-        R.layout.cocina_activity, parent,
+        R.layout.item_cocina, parent,
         false))
 {
 
-    private var textNumeroMesa: TextView? = null
-    private var textMesa: TextView? = null
 
-    init
-    {
-        textMesa = itemView.findViewById(R.id.textMesa)
-        textNumeroMesa = itemView.findViewById(R.id.numeromesa)
+    private var textNumero: TextView? = null
+    private var textNombre: TextView? = null
 
+    init {
+        textNumero = itemView.findViewById(R.id.textnumero)
+        textNombre = itemView.findViewById(R.id.textnombre)
     }
 
-    fun bind(cocina: Cocina)
-    {
-        textNumeroMesa?.text = cocina.Title
-        textMesa?.text = cocina.Cantidad
 
+    fun bind(mesa: Mesa) {
+        textNumero?.text = mesa.numero.toString()
+        textNombre?.text=mesa.nombre
     }
 }

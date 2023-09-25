@@ -27,7 +27,7 @@
         tools:ignore="MissingConstraints"
         tools:itemCount="5"
         tools:layout_editor_absoluteX="0dp"
-        tools:listitem="@layout/items_news"
+        tools:listitem="@layout/item_mesas"
         />
 
 

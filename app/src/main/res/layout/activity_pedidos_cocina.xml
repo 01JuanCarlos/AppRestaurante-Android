@@ -5,14 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+
+    <include
+        android:id="@+id/app_bar_menu"
+        layout="@layout/app_bar_menu"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/cheleste"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-6dp" />
 
     <TextView
+
         android:id="@+id/texBar"
         android:layout_width="398dp"
         android:layout_height="52dp"
@@ -20,23 +23,12 @@
         android:gravity="center"
         android:text="@string/textTituloCocina"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  />
-
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/menu"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPedidos"
@@ -47,10 +39,10 @@
         app:layout_constraintTop_toBottomOf="@+id/texBar"
         tools:itemCount="6"
         tools:layout_editor_absoluteX="135dp"
-        tools:listitem="@layout/pedidospendientes_activity" />
+        tools:listitem="@layout/item_platos" />
 
     <Button
-        android:id="@+id/btnCocinero"
+
         android:layout_width="274dp"
         android:layout_height="62dp"
         android:layout_marginStart="68dp"
@@ -60,15 +52,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/app_bar_menu" />
 
-    <ImageView
-        android:id="@+id/imgboton"
-        android:layout_width="59dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="604dp"
-        android:src="@drawable/compartir"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

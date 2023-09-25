@@ -1,12 +1,13 @@
-package com.cibertec.apprestaurante.adapter
+package com.cibertec.apprestaurante.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.cibertec.apprestaurante.Model.Mesa
 import com.cibertec.apprestaurante.models.Cocina
 import com.cibertec.apprestaurante.viewholder.ViewHolderCocina
 
-class CocinaAdapter(val list: List<Cocina>):
+class CocinaAdapter(val list: List<Mesa>):
     RecyclerView.Adapter<ViewHolderCocina>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderCocina {
         val inflater = LayoutInflater.from(parent.context)
@@ -18,9 +19,8 @@ class CocinaAdapter(val list: List<Cocina>):
     }
 
     override fun onBindViewHolder(holder: ViewHolderCocina, position: Int) {
-        val cocina: Cocina = list[position]
-        holder.bind(cocina)
+        val mesa: Mesa = list[position]
+        holder.bind(mesa)
     }
-
 
 }

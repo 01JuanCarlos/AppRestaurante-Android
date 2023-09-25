@@ -17,14 +17,14 @@
 
 
 
-    <string name="app_name">AppRestaurante</string>
+
     
     <string name="btnMeesero">Mesero</string>
     <string name="btnCocinero">Cocinero</string>
 
     <string name="textTituloAdmi">Administrar</string>
     <string name="textTituloPedidos">Pedidos pendientes</string>
-    <string name="textTituloCocina">Cocina</string>
+    <string name="textTituloCocina">Pedidos para esta mesa</string>
 
     <string name="btnEntregar">Entregar</string>
 

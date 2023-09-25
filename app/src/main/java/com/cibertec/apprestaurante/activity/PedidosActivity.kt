@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.R
 import com.cibertec.apprestaurante.adapter.PedidosAdapter
-import com.cibertec.apprestaurante.models.Pedidos
+import com.cibertec.apprestaurante.Model.Pedidos
 
 class PedidosActivity: AppCompatActivity()
 {
@@ -24,7 +24,7 @@ class PedidosActivity: AppCompatActivity()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.vista_pedidos_activity)
+        setContentView(R.layout.activity_pedidos_cocina)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerPedidos)
         recyclerView.apply{

@@ -1,5 +1,6 @@
 package com.cibertec.apprestaurante.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -43,6 +44,11 @@ class MesasActivity : AppCompatActivity(){
             layoutManager = GridLayoutManager(context, 2)
            // layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
             adapter = MesaAdapter(listMesa)
+        }
+
+        val btnmenu = findViewById<ImageView>(R.id.btn_menu)
+        btnmenu.setOnClickListener {
+            startActivity(Intent(this, AdministracionActivity:: class.java))
         }
         val btnAdd = findViewById<ImageView>(R.id.btn_add)
         btnAdd.setOnClickListener {

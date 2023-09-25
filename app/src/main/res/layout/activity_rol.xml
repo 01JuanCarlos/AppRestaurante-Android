@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+
 
 
     <include
@@ -13,15 +16,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+    <TextView
+
+        android:id="@+id/texBar"
+        android:layout_width="398dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Seleccion de Rol"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/btn_menu"
+        android:layout_width="91dp"
+        android:layout_height="46dp"
+        android:src="@drawable/baseline_menu_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="200dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
+        app:layout_constraintVertical_bias="0.419"
+        tools:layout_editor_absoluteX="40dp">
 
         <Button
 
@@ -42,5 +66,6 @@
             android:textSize="30dp" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

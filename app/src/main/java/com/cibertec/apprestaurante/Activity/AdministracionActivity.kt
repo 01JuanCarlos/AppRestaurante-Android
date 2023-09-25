@@ -14,7 +14,7 @@ class AdministracionActivity: AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_administrar)
 
-     val btnCategory = findViewById<Button>(R.id.btncate)
+     val btnCategory = findViewById<Button>(R.id.btn_add_categori)
         btnCategory.setOnClickListener {
             startActivity(Intent(this,AddcategoriasActivity :: class.java))
         }

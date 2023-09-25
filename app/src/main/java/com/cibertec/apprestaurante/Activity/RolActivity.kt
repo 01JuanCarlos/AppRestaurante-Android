@@ -15,9 +15,9 @@ class RolActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rol)
 
-        val btnmenu = findViewById<ImageView>(R.id.btn_menu)
-        btnmenu.setOnClickListener {
-            startActivity(Intent(this, AdministracionActivity:: class.java))
+        val btnme = findViewById<ImageView>(R.id.btn_menu)
+        btnme.setOnClickListener{
+            startActivity(Intent(this, AdministracionActivity::class.java))
         }
         val btnMesaero = findViewById<Button>(R.id.btnMesero)
         btnMesaero.setOnClickListener {

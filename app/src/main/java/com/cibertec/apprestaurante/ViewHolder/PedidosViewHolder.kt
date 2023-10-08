@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.R
 import com.cibertec.apprestaurante.Model.Pedidos
 
-class ViewHolderPedidos (inflater: LayoutInflater, parent: ViewGroup):
+class PedidosViewHolder (inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(
         R.layout.item_platos, parent,
         false))

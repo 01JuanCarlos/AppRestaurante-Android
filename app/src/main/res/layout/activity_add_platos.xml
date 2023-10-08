@@ -41,7 +41,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.715"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/app_bar_menu">
 
@@ -58,11 +58,12 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/editTextCategoria"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:hint="Categoria"
+            android:layout_marginTop="50dp"
+            android:hint="Cattegoria"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="20dp" />
         <!-- Campo para la descripción -->

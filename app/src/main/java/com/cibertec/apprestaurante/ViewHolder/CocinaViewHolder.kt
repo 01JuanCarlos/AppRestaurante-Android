@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.Model.Mesa
 import com.cibertec.apprestaurante.R
 
-class ViewHolderCocina(inflater: LayoutInflater, parent: ViewGroup):
+class CocinaViewHolder(inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(
         R.layout.item_cocina, parent,
         false))

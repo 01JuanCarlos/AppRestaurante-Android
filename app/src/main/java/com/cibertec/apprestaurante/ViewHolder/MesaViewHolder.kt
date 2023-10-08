@@ -14,6 +14,7 @@ class MesaViewHolder(inflater: LayoutInflater, parent: ViewGroup):RecyclerView.V
     private var textNumero: TextView? = null
     private var textNombre: TextView? = null
 
+
     init {
         textNumero = itemView.findViewById(R.id.textnumero)
         textNombre = itemView.findViewById(R.id.textnombre)

@@ -4,21 +4,21 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.Model.Pedidos
-import com.cibertec.apprestaurante.viewholder.ViewHolderPedidos
+import com.cibertec.apprestaurante.viewholder.PedidosViewHolder
 
 class PedidosAdapter(val list: List<Pedidos>):
-    RecyclerView.Adapter<ViewHolderPedidos>() {
+    RecyclerView.Adapter<PedidosViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-            ViewHolderPedidos {
+            PedidosViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ViewHolderPedidos(inflater, parent)
+        return PedidosViewHolder(inflater, parent)
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolderPedidos, position: Int) {
+    override fun onBindViewHolder(holder: PedidosViewHolder, position: Int) {
         val pedidos: Pedidos = list[position]
         holder.bind(pedidos)
     }

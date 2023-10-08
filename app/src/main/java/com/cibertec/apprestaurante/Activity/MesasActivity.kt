@@ -47,10 +47,10 @@ class MesasActivity : AppCompatActivity(){
         }
 
 
-        val btn_food = findViewById<Button>(R.id.siguiente)
+     /*   val btn_food = findViewById<Button>(R.id.siguiente)
         btn_food.setOnClickListener {
             startActivity(Intent(this, ConsumoActivity:: class.java))
-        }
+        }*/
 
 
         val btnAdd = findViewById<ImageView>(R.id.btn_add)

@@ -3,7 +3,7 @@ package com.cibertec.apprestaurante.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.cibertec.apprestaurante.Model.Mesa
+import com.cibertec.apprestaurante.database.Mesa
 import com.cibertec.apprestaurante.viewholder.CocinaViewHolder
 
 class CocinaAdapter(val list: List<Mesa>):

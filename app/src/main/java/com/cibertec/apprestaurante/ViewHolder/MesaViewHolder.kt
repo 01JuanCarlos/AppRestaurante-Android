@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.cibertec.apprestaurante.Model.Mesa
+import com.cibertec.apprestaurante.database.Mesa
 import com.cibertec.apprestaurante.R
 
 class MesaViewHolder(inflater: LayoutInflater, parent: ViewGroup):RecyclerView.ViewHolder(inflater.inflate(

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.cibertec.apprestaurante.Adapter.CocinaAdapter
-import com.cibertec.apprestaurante.Model.Mesa
+import com.cibertec.apprestaurante.database.Mesa
 import com.cibertec.apprestaurante.R
 
 

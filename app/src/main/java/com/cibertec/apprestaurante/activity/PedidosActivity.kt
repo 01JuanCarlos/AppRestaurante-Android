@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.R
-import com.cibertec.apprestaurante.adapter.PedidosAdapter
 import com.cibertec.apprestaurante.Model.Pedidos
+import com.cibertec.apprestaurante.adapter.PedidosAdapter
 
 class PedidosActivity: AppCompatActivity()
 {

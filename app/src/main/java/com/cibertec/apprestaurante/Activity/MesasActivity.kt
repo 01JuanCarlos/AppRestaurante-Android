@@ -1,6 +1,5 @@
 package com.cibertec.apprestaurante.Activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -9,11 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cibertec.apprestaurante.Adapter.MesaAdapter
-import com.cibertec.apprestaurante.Model.Mesa
+import com.cibertec.apprestaurante.database.Mesa
 import com.cibertec.apprestaurante.R
 
 class MesasActivity : AppCompatActivity(){

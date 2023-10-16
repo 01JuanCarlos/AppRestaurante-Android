@@ -11,7 +11,7 @@ import com.cibertec.apprestaurante.R
 
 
 class CocinaActivity : AppCompatActivity()
-{
+{/*
     private val listMesa = listOf(
 
     Mesa(1,"Juan Miranda"),
@@ -26,8 +26,7 @@ class CocinaActivity : AppCompatActivity()
     Mesa(10,"Pepe"),
     Mesa(11,"Miguel"),
     Mesa(12,"Raul"),
-
-    )
+)*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +37,7 @@ class CocinaActivity : AppCompatActivity()
              layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             //layoutManager = GridLayoutManager(context, 2)
             // layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
-            adapter = CocinaAdapter(listMesa)
+          //  adapter = CocinaAdapter(listMesa)
         }
     }
 

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName="tb_mesas")
 data class Mesa(
     @ColumnInfo("numero_mesa")
-    val numero:Number,
+    val numero:Int,
     @ColumnInfo("nombre_mesa")
     val nombre:String,
 

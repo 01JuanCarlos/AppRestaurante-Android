@@ -21,7 +21,19 @@ class MesaRepository (application: Application) {
         }
     }
 
-    fun getMesa():LiveData<List<Mesa>>?{
+    suspend fun updateMesaWithCoroutines(mesa: Mesa) {
+        processUpdateMesa(mesa)
+    }
+
+    private suspend fun processUpdateMesa(mesa: Mesa) {
+        withContext(Dispatchers.Default) {
+            mesaDao?.update(mesa)
+        }
+    }
+
+
+    fun getMesa(): LiveData<List<Mesa>>?{
             return mesaDao?.list()
+
 }
 }

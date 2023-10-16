@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppRestaurante"
         tools:targetApi="31">
          <activity
-            android:name=".Activity.LoginActivity"
+            android:name=".Activity.MesasActivity"
              android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,6 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".Activity.CategoriasActivity"/>
         <activity android:name=".Activity.FoodsActiviity"/>
-        <activity android:name=".Activity.MesasActivity"/>
         <activity android:name=".Activity.CocinaActivity"/>
         <activity android:name=".activity.PedidosActivity"/>
         <activity android:name=".Activity.RolActivity"/>

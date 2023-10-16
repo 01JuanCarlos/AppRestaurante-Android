@@ -1,32 +1,35 @@
-package com.cibertec.apprestaurante.Mesa
+package com.cibertec.apprestaurante.Cocina
+
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.database.Mesa
 
-class MesaAdapter(val  mItemClickListener: ItemClickListener):
-RecyclerView.Adapter<MesaViewHolder>() {
 
-
-
+class CocinaAdapter(val  mItemClickListener: ItemClickListener):
+    RecyclerView.Adapter<CocinaViewHolder>()
+{
     private var mesaList= emptyList<Mesa>()
 
     fun setMesa(mesa:List<Mesa>){
         this.mesaList=mesa
-      this.notifyDataSetChanged()
+        this.notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MesaViewHolder {
+
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CocinaViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return MesaViewHolder(inflater, parent)
+        return CocinaViewHolder(inflater, parent)
     }
 
     override fun getItemCount(): Int {
         return mesaList.size
     }
 
-    override fun onBindViewHolder(holder: MesaViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CocinaViewHolder, position: Int) {
         val mesa: Mesa = mesaList[position]
         holder.bind(mesa)
         holder.itemView.setOnClickListener{
@@ -35,7 +38,6 @@ RecyclerView.Adapter<MesaViewHolder>() {
     }
 
     interface ItemClickListener{
-        fun onItemClick(mesa:Mesa)
+        fun onItemClick(mesa: Mesa)
     }
-
 }

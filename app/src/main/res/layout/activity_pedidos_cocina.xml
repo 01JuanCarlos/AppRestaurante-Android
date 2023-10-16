@@ -17,7 +17,7 @@
 
     <TextView
 
-        android:id="@+id/texBar"
+
         android:layout_width="398dp"
         android:layout_height="52dp"
         android:layout_marginTop="4dp"

@@ -1,4 +1,4 @@
-package com.cibertec.apprestaurante.viewholder
+package com.cibertec.apprestaurante.Cocina
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,22 +9,18 @@ import com.cibertec.apprestaurante.R
 
 class CocinaViewHolder(inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(
-        R.layout.item_cocina, parent,
-        false))
+        R.layout.item_cocina, parent, false))
 {
-
 
     private var textNumero: TextView? = null
     private var textNombre: TextView? = null
 
     init {
-        textNumero = itemView.findViewById(R.id.textnumero)
-        textNombre = itemView.findViewById(R.id.textnombre)
+        textNumero = itemView.findViewById(R.id.numeromesaCocina)
     }
 
 
     fun bind(mesa: Mesa) {
         textNumero?.text = mesa.numero.toString()
-        textNombre?.text=mesa.nombre
     }
 }

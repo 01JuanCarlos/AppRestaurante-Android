@@ -14,7 +14,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-1dp" />
     <TextView
-        android:id="@+id/texBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -29,15 +28,17 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/texBar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:textSize="23dp"
-        android:textColor="@color/seed"
         android:text="Consumo de la mesa"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="336dp"
+        android:textColor="@color/seed"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
@@ -48,7 +49,7 @@
         android:background="@drawable/btn_add"
         android:elevation="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/texBar"
         app:layout_constraintHorizontal_bias="0.895"
         app:layout_constraintStart_toStartOf="@+id/app_bar_menu"
         app:layout_constraintTop_toTopOf="parent"

@@ -1,9 +1,11 @@
 package com.cibertec.apprestaurante.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -99,6 +101,11 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickListener{
     }
 
     override fun onItemClick(mesa: Mesa) {
+   /*    val id= mesa.Id_mesa
+        println("id : "+id)
+        var consumo =startActivity(Intent(this, ConsumoActivity::class.java))
+*/
+
         RegistrarMesa(mesa,tipo=1)
     }
 }

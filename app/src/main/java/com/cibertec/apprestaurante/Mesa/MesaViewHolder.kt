@@ -1,4 +1,4 @@
-package com.cibertec.apprestaurante.Adapter
+package com.cibertec.apprestaurante.Mesa
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

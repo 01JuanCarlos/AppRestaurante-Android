@@ -1,9 +1,9 @@
-package com.cibertec.apprestaurante.ViewModel
+package com.cibertec.apprestaurante.Mesa
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.cibertec.apprestaurante.Repository.MesaRepository
+import com.cibertec.apprestaurante.Mesa.MesaRepository
 import com.cibertec.apprestaurante.database.Mesa
 import kotlinx.coroutines.launch
 

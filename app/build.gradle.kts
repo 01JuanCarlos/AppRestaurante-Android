@@ -42,6 +42,9 @@ dependencies {
 
 
 
+
+    //conexion http
+    implementation("com.android.volley:volley:1.2.1")
     // Room
     implementation("androidx.room:room-runtime:2.5.2")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")

@@ -33,5 +33,6 @@
 
     <string name="btnAgrCategorias">Agregar Categorías</string>
     <string name="btnAgrPlatos">Agregar Platos</string>
-
+    <string name="guardar">Guardar</string>
+    <string name="eliminar">Eliminar</string>
 </resources>

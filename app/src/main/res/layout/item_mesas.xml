@@ -15,8 +15,9 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
+
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="68dp"
             app:cardBackgroundColor="#00BCD4"
             app:cardCornerRadius="20dp">
 
@@ -27,6 +28,15 @@
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image" />
+
+            <ImageView
+                android:id="@+id/btn_edit"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:layout_gravity="right"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/img"
+                app:tint="@color/white" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -42,32 +52,20 @@
             android:text="10"
             android:textSize="25dp"
             android:textStyle="bold" />
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/textnombre"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:maxLines="4"
+            android:text="Contenido nombre"
+            android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/textnombre"
-                android:layout_width="322dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_horizontal"
-                android:maxLines="4"
-                android:text="Contenido nombre"
-                android:textSize="20dp" />
 
-            <ImageView
-                android:id="@+id/edit"
-                android:layout_width="45dp"
-                android:layout_height="38dp"
-                app:srcCompat="@drawable/img" />
-
-        </LinearLayout>
     </LinearLayout>
 
 

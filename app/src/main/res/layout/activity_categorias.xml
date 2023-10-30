@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Seleccion de Rol"
+        android:text="CATEGORIAS"
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -27,97 +27,11 @@
         app:layout_constraintVertical_bias="0.022"
         tools:ignore="MissingConstraints" />
 
-    
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCategorias"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="70dp">
-        <Button
-            android:id="@+id/btncate"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="374dp"
-            android:layout_height="81dp"
-            android:backgroundTint="#DDC704"
-            android:text="ENTRADAS"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="21dp"
-            tools:layout_editor_absoluteY="83dp" />
+        tools:listitem="@layout/item_categorias"
+        android:layout_marginTop="50dp"/>
 
-        <Button
-            android:id="@+id/button1"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="374dp"
-            android:layout_height="81dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="#DDC704"
-            android:text="ESPECIALIDADES"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
-
-        <Button
-            android:id="@+id/button2"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="374dp"
-            android:layout_height="81dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="#DDC704"
-            android:text="DESAYUNOS"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button1" />
-
-        <Button
-            android:id="@+id/button3"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="374dp"
-            android:layout_height="81dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="#DDC704"
-            android:text="LONCHES"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
-        <Button
-            android:id="@+id/button4"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="374dp"
-            android:layout_height="81dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="#DDC704"
-            android:text="BEBIDAS +"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
-        <Button
-            android:id="@+id/button5"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="374dp"
-            android:layout_height="81dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="#DDC704"
-            android:text="POSTRES"
-            android:textSize="25sp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

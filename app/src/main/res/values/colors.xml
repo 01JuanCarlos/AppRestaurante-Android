@@ -4,7 +4,7 @@
     <color name="green">#FD36BA5C</color>
     <color name="seed">#42a5f1</color>
     <color name="md_theme_light_primary">#42a5f1</color>
-
+    <color name="yellow">#FFC107</color>
     <color name="md_theme_light_primaryContainer">#CEE5FF</color>
     <color name="md_theme_light_onPrimaryContainer">#001D33</color>
     <color name="md_theme_light_secondary">#00639B</color>

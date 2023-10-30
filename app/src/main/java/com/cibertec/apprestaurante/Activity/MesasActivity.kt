@@ -1,6 +1,7 @@
 package com.cibertec.apprestaurante.Activity
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -38,12 +39,15 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickListener{
         btnAdd.setOnClickListener {
             RegistrarMesa(null,tipo=0)
         }
+        val btnsaltar = findViewById<Button>(R.id.btn_saltar)
+        btnsaltar.setOnClickListener {
+            startActivity(Intent(this, CategoriasActivity::class.java))
+
+        }
 
 
-        /* val btnediar = findViewById<ImageView>(R.id.edit)
-        btnediar.setOnClickListener {
-            //RegistrarMesa(mesa,tipo=1)
-        }*/
+
+
 
         val recyclerMesas = findViewById<RecyclerView>(R.id.recyclerMesas)
         val adapter= MesaAdapter(this)

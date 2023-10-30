@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.cibertec.apprestaurante"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.cibertec.apprestaurante"

@@ -1,5 +1,7 @@
 package com.cibertec.apprestaurante.Activity
 
+import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 
 import android.widget.Button
@@ -30,14 +32,31 @@ class AddcategoriasActivity: AppCompatActivity() {
 
             val edtNombre = findViewById<EditText>(R.id.nombrecategoria)
             var nombre = edtNombre.text.toString()
-
-
             var categoria= Categoria(nombre)
-            categoriaViewModel.saveCategoriaWithCoroutines(categoria)
-            edtNombre.setText("")
+            if (nombre!= "") {
+                categoriaViewModel.saveCategoriaWithCoroutines(categoria)
+                showBasicAlertDialog(this,"Categoria: "+nombre,"Agregada Exitosamente!!")
+                edtNombre.setText("")
+            } else {
+                showBasicAlertDialog(this,"Ingresa una categoria por favor","")
+            }
 
         }
 
+    }
+    fun showBasicAlertDialog(context: Context, title: String, message: String) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle(title)
+        builder.setMessage(message)
+
+        // Agregar un botón "Aceptar"
+        builder.setPositiveButton("Aceptar") { dialog, _ ->
+            // Acción a realizar cuando se presiona "Aceptar"
+            dialog.dismiss()
+        }
+
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
 

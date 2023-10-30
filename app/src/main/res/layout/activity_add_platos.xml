@@ -39,6 +39,7 @@
     <!-- Botón para enviar el formulario -->
 
     <LinearLayout
+
         android:layout_width="408dp"
         android:layout_height="662dp"
         android:orientation="vertical"
@@ -53,6 +54,7 @@
         <!-- Campo para el nombre del producto -->
 
         <EditText
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -64,7 +66,7 @@
             android:textSize="20dp" />
 
         <Spinner
-            android:id="@+id/ListaCategoria"
+            android:id="@+id/editTextCategory"
             android:layout_width="314dp"
             android:layout_height="48dp"
             android:layout_marginStart="30dp"
@@ -74,6 +76,20 @@
             android:textSize="20dp"
             tools:layout_editor_absoluteX="119dp"
             tools:layout_editor_absoluteY="265dp" />
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/borde_personalizado"
+            android:padding="10dp"
+            android:hint="Descripción"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:cornerRadius="10dp" />
 
         <EditText
             android:id="@+id/editTextInsertarImagen"
@@ -121,6 +137,7 @@
 
         <Button
 
+            android:id="@+id/btnguardarplato"
             android:layout_width="300dp"
             android:layout_height="80dp"
             android:layout_marginStart="40dp"

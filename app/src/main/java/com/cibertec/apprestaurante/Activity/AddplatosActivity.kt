@@ -1,24 +1,121 @@
 package com.cibertec.apprestaurante.Activity
 
-import android.content.Intent
+import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.ImageButton
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
+import android.widget.Toast
+
+
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.cibertec.apprestaurante.Categoria.CategoriaViewModel
+import com.cibertec.apprestaurante.Plato.PlatoViewModel
+
 import com.cibertec.apprestaurante.R
+import com.cibertec.apprestaurante.database.Categoria
+import com.cibertec.apprestaurante.database.Plato
+import java.text.FieldPosition
 
-class AddplatosActivity: AppCompatActivity() {
+class AddplatosActivity:  AppCompatActivity() {
 
-    private var ListaCategoria: Spinner?=null
+    private lateinit var platoViewModel: PlatoViewModel
+    lateinit var categoria: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_platos)
 
-        ListaCategoria=findViewById(R.id.ListaCategoria)
+        var spinner = findViewById<Spinner>(R.id.editTextCategory)
 
-        val listaCategoria= arrayOf("Seleccione","Desayuno","Almuerzos","Postres","Bebidas")
 
-        var adaptador: ArrayAdapter<String> = ArrayAdapter(this,android.R.layout.simple_spinner_item,listaCategoria)
-        ListaCategoria?.adapter=adaptador
-}}
+        platoViewModel=run {
+            ViewModelProvider(this)[PlatoViewModel::class.java]
+        }
+        spinner = findViewById(R.id.editTextCategory)
+
+        val listaCategoria = arrayOf("Seleccione", "Desayuno", "Almuerzos", "Postres", "Bebidas")
+
+        var adaptador: ArrayAdapter<String> =
+            ArrayAdapter(this, android.R.layout.simple_spinner_item, listaCategoria)
+        spinner?.adapter = adaptador
+
+        spinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long) {
+
+                categoria = listaCategoria[position]
+
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+
+        }
+
+
+
+        val btnguardarplato = findViewById<Button>(R.id.btnguardarplato)
+        btnguardarplato.setOnClickListener() {
+
+            val edtNombre = findViewById<EditText>(R.id.editTextName)
+            var nombre = edtNombre.text.toString()
+            val edtDescripcion = findViewById<EditText>(R.id.editTextDescription)
+            val descripcion = edtDescripcion.text.toString()
+            val edtPrecio = findViewById<EditText>(R.id.editTextPrecio)
+            val precio = edtPrecio.text.toString().toDouble()
+
+
+            var plato = Plato(nombre, categoria,  descripcion, precio)
+
+            if (nombre!="" && descripcion!="" && categoria!="") {
+                platoViewModel.savePlatoWithCoroutines(plato)
+                showBasicAlertDialog(this,"Se agrego el plato exitosamente","Nombre: "+nombre+"\n"+"Categoria: "+categoria+"\n"+"Descripcion: "+descripcion+"\n"+"Precio: S/"+precio)
+                edtNombre.setText("")
+                edtDescripcion.setText("")
+                edtPrecio.setText("")
+            } else {
+                showBasicAlertDialog(this,"Ingresa una categoria por favor","")
+            }
+
+
+
+
+        }
+
+
+
+    }
+    fun showBasicAlertDialog(context: Context, title: String, message: String) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle(title)
+        builder.setMessage(message)
+
+        // Agregar un botón "Aceptar"
+        builder.setPositiveButton("Aceptar") { dialog, _ ->
+            // Acción a realizar cuando se presiona "Aceptar"
+            dialog.dismiss()
+        }
+
+        val alertDialog = builder.create()
+        alertDialog.show()
+    }
+
+
+}
+
+
+
+
+

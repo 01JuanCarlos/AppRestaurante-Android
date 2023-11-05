@@ -1,6 +1,8 @@
 package com.cibertec.apprestaurante.Activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +32,10 @@ class CategoriasActivity: AppCompatActivity() {
                 adapter.setCategoria(categorias)
             }
         }
-
+        val btnsalta = findViewById<Button>(R.id.btn_saltarFod)
+        btnsalta.setOnClickListener {
+            startActivity(Intent(this, FoodsActiviity::class.java))
+        }
     }
 
 

@@ -19,6 +19,6 @@ interface PlatoDAO {
     @Delete
     fun delete(plato: Plato)
 
-    @Query("SELECT * FROM tb_plato ORDER BY id_plato DESC")
+    @Query("SELECT * FROM tb_plato ORDER BY id_plato ASC")
     fun list(): LiveData<List<Plato>>
 }

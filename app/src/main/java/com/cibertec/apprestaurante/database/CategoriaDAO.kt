@@ -19,6 +19,6 @@ interface CategoriaDAO {
     @Delete
     fun delete(categoria: Categoria)
 
-    @Query("SELECT * FROM tb_categoria ORDER BY id_categoria DESC")
+    @Query("SELECT * FROM tb_categoria ORDER BY id_categoria ASC")
     fun list(): LiveData<List<Categoria>>
 }

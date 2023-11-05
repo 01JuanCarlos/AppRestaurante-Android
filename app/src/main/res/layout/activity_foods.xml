@@ -26,19 +26,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022"
         tools:ignore="MissingConstraints" />
-
-
-
     <androidx.recyclerview.widget.RecyclerView
-
         android:id="@+id/recyclerFoods"
-        android:layout_width="355dp"
-        android:layout_height="634dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
-        app:layout_constraintVertical_bias="0.835"
-        tools:itemCount="4"
-        tools:listitem="@layout/item_foods" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_foods"
+        android:layout_marginTop="60dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

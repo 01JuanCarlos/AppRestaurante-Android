@@ -27,7 +27,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-
                     android:id="@+id/textTit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -55,14 +54,14 @@
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/textDesc"
-                    android:layout_width="199dp"
+                    android:layout_width="220dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
                     android:ellipsize="end"
-                    android:maxLines="5"
+                    android:maxLines="3"
                     android:text="Jugo de papaya con trozos de manzana y platano"
                     android:textColor="@color/black"
                     android:textSize="15sp" />

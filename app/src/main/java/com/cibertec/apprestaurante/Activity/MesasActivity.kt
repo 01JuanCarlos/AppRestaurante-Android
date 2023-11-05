@@ -97,7 +97,7 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickListener{
 
             if(tipo==0){
                 var mesa=Mesa(numero,nombre,date)
-                val url="http://192.168.100.10/AppRestaurante/insertar_datos.php"
+                val url="http://192.168.1.106/AppRestaurante/insertar_datos.php"
                 ejecutarServicio(url,numero,nombre)
                 mesaViewModel.saveMesaWithCoroutines(mesa)
             }else{

@@ -23,9 +23,10 @@ import com.cibertec.apprestaurante.database.Plato
 import java.text.FieldPosition
 
 class AddplatosActivity:  AppCompatActivity() {
-
-    private lateinit var platoViewModel: PlatoViewModel
+    private lateinit var platoViewModel:PlatoViewModel
+    private lateinit var categoriaViewModel:CategoriaViewModel
     lateinit var categoria: String
+    private lateinit var listaCategorias: ArrayList<Categoria>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +34,19 @@ class AddplatosActivity:  AppCompatActivity() {
 
         var spinner = findViewById<Spinner>(R.id.editTextCategory)
 
-
+        listaCategorias  = ArrayList()
+        categoriaViewModel=run {
+            ViewModelProvider(this)[CategoriaViewModel::class.java]
+        }
         platoViewModel=run {
             ViewModelProvider(this)[PlatoViewModel::class.java]
         }
+
         spinner = findViewById(R.id.editTextCategory)
 
-        val listaCategoria = arrayOf("Seleccione", "Desayuno", "Almuerzos", "Postres", "Bebidas")
+        val listaCategoria = listaCategorias
 
-        var adaptador: ArrayAdapter<String> =
+        var adaptador: ArrayAdapter<Categoria> =
             ArrayAdapter(this, android.R.layout.simple_spinner_item, listaCategoria)
         spinner?.adapter = adaptador
 
@@ -53,7 +58,7 @@ class AddplatosActivity:  AppCompatActivity() {
                 position: Int,
                 id: Long) {
 
-                categoria = listaCategoria[position]
+                categoria = listaCategoria[position].toString()
 
             }
 

@@ -2,6 +2,7 @@ package com.cibertec.apprestaurante.Activity
 
 import android.app.AlertDialog
 import android.content.Context
+import android.icu.text.Transliterator.Position
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -23,42 +24,51 @@ import com.cibertec.apprestaurante.database.Plato
 import java.text.FieldPosition
 
 class AddplatosActivity:  AppCompatActivity() {
-    private lateinit var platoViewModel:PlatoViewModel
-    private lateinit var categoriaViewModel:CategoriaViewModel
+
+    private lateinit var platoViewModel: PlatoViewModel
+    private lateinit var categiriaViewModel: CategoriaViewModel
+    private lateinit var listacat: ArrayList<Categoria>
+
     lateinit var categoria: String
-    private lateinit var listaCategorias: ArrayList<Categoria>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_platos)
+        listacat = ArrayList()
 
         var spinner = findViewById<Spinner>(R.id.editTextCategory)
 
-        listaCategorias  = ArrayList()
-        categoriaViewModel=run {
-            ViewModelProvider(this)[CategoriaViewModel::class.java]
-        }
+
         platoViewModel=run {
             ViewModelProvider(this)[PlatoViewModel::class.java]
+        }
+        categiriaViewModel=run {
+            ViewModelProvider(this)[CategoriaViewModel::class.java]
         }
 
         spinner = findViewById(R.id.editTextCategory)
 
-        val listaCategoria = listaCategorias
+        var arrayCategorias = emptyArray<String>()
 
-        var adaptador: ArrayAdapter<Categoria> =
-            ArrayAdapter(this, android.R.layout.simple_spinner_item, listaCategoria)
-        spinner?.adapter = adaptador
+        categiriaViewModel.categoria?.observe(this) {
+            listacat= it as ArrayList<Categoria>
+            println("ArrayCAtegorias:   "+listacat)
+            arrayCategorias = listacat.map { it.nombre }.toTypedArray()
 
-        spinner.onItemSelectedListener = object :
-            AdapterView.OnItemSelectedListener{
+            val adaptador: ArrayAdapter<String> =
+                ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayCategorias)
+            spinner?.adapter = adaptador
+        }
+
+
+       spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
-                id: Long) {
-
-                categoria = listaCategoria[position].toString()
+                id: Long
+            ) {
+                categoria = arrayCategorias[position]
 
             }
 
@@ -84,7 +94,7 @@ class AddplatosActivity:  AppCompatActivity() {
 
             var plato = Plato(nombre, categoria,  descripcion, precio)
 
-            if (nombre!="" && descripcion!="" && categoria!="") {
+            if (nombre!="" && descripcion!="" ) {
                 platoViewModel.savePlatoWithCoroutines(plato)
                 showBasicAlertDialog(this,"Se agrego el plato exitosamente","Nombre: "+nombre+"\n"+"Categoria: "+categoria+"\n"+"Descripcion: "+descripcion+"\n"+"Precio: S/"+precio)
                 edtNombre.setText("")
@@ -119,8 +129,3 @@ class AddplatosActivity:  AppCompatActivity() {
 
 
 }
-
-
-
-
-

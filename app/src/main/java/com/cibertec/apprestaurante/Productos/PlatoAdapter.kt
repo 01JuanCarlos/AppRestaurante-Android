@@ -1,4 +1,4 @@
-package com.cibertec.apprestaurante.Platos
+package com.cibertec.apprestaurante.Productos
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

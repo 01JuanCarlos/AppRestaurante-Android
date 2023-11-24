@@ -4,15 +4,16 @@ package com.cibertec.apprestaurante.Cocina
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.cibertec.apprestaurante.Mesa.MesaFirebase
 import com.cibertec.apprestaurante.database.Mesa
 
 
 class CocinaAdapter(val  mItemClickListener: ItemClickListener):
     RecyclerView.Adapter<CocinaViewHolder>()
 {
-    private var mesaList= emptyList<Mesa>()
+    private var mesaList= emptyList<MesaFirebase>()
 
-    fun setMesa(mesa:List<Mesa>){
+    fun setMesa(mesa:List<MesaFirebase>){
         this.mesaList=mesa
         this.notifyDataSetChanged()
     }
@@ -30,7 +31,7 @@ class CocinaAdapter(val  mItemClickListener: ItemClickListener):
     }
 
     override fun onBindViewHolder(holder: CocinaViewHolder, position: Int) {
-        val mesa: Mesa = mesaList[position]
+        val mesa: MesaFirebase = mesaList[position]
         holder.bind(mesa)
         holder.itemView.setOnClickListener{
             mItemClickListener.onItemClick(mesa)
@@ -38,6 +39,6 @@ class CocinaAdapter(val  mItemClickListener: ItemClickListener):
     }
 
     interface ItemClickListener{
-        fun onItemClick(mesa: Mesa)
+        fun onItemClick(mesa: MesaFirebase)
     }
 }

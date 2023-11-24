@@ -30,7 +30,7 @@
         android:layout_marginHorizontal="40dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/regnombre"
+            android:id="@+id/edtNombres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -50,7 +50,7 @@
         android:layout_marginHorizontal="40dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/regapellido"
+            android:id="@+id/edtApellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -68,7 +68,7 @@
         android:layout_marginHorizontal="40dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/regcorreo"
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -81,12 +81,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:hint="ContraseÃ±a"
         android:layout_marginBottom="30sp"
         android:layout_marginHorizontal="40dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/regcontraseña"
+            android:id="@+id/edtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -97,6 +97,7 @@
 
 
     <Button
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"

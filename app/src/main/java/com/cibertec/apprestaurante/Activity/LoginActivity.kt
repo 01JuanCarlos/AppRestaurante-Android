@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.cibertec.apprestaurante.R
+import com.cibertec.apprestaurante.Registro.RegistroActivity
 import com.cibertec.apprestaurante.ViewHolder.LoginViewModel
 import com.google.android.material.textfield.TextInputEditText
 
@@ -45,12 +46,13 @@ class LoginActivity : AppCompatActivity(){
     }
 
 
+
     private fun observerViewModel() {
-    viewModel.userSessionService.observe(this){
-        if(it){
-            startActivity(Intent(this,RolActivity::class.java))
+        viewModel.userSessionService.observe(this){
+            if(it){
+                startActivity(Intent(this,RolActivity::class.java))
+            }
         }
-    }
         viewModel.userLoginService.observe(this) {
             if (it) {
                 startActivity(Intent(this, RolActivity::class.java))

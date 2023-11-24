@@ -7,7 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginViewModel: ViewModel() {
     private lateinit var authFirebase: FirebaseAuth
-     val userSessionService= MutableLiveData<Boolean>()
+    val userSessionService= MutableLiveData<Boolean>()
     val userLoginService = MutableLiveData<Boolean>()
 
     fun login(email: String, pass: String) {

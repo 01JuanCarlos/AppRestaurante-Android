@@ -14,10 +14,10 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-1dp" />
     <TextView
+        android:id="@+id/titulo_consumo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Consumo "
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -41,8 +41,15 @@
         app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
         tools:ignore="MissingConstraints" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerConsumo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_consumo"
+        android:layout_marginTop="60dp"/>
+
     <ImageButton
-        android:id="@+id/btn_add"
+        android:id="@+id/btn_add_consumo"
         android:layout_width="86dp"
         android:layout_height="79dp"
         android:layout_gravity="bottom|end"

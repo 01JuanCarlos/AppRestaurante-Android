@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1042802952474",
-    "project_id": "cibertec-app-android-jc",
-    "storage_bucket": "cibertec-app-android-jc.appspot.com"
+    "project_number": "114233641594",
+    "project_id": "apprestaurante-58a22",
+    "storage_bucket": "apprestaurante-58a22.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1042802952474:android:2137c11af22c2e637504a3",
+        "mobilesdk_app_id": "1:114233641594:android:ab02285cb73bd187eb09c3",
         "android_client_info": {
           "package_name": "com.cibertec.apprestaurante"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAiAYiTyNnKyZipt4vRJX8P5QCgOKhuxqM"
+          "current_key": "AIzaSyDy0p2jCZuUeamgQk0u65223SSwZxgjqg8"
         }
       ],
       "services": {

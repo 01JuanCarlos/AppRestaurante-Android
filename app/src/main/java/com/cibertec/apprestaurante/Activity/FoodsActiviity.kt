@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cibertec.apprestaurante.Adapter.FoodsAdapter
 import com.cibertec.apprestaurante.Plato.PlatoViewModel
-import com.cibertec.apprestaurante.Platos.PlatoAdapter
+import com.cibertec.apprestaurante.Productos.PlatoAdapter
 import com.cibertec.apprestaurante.R
 
 class FoodsActiviity: AppCompatActivity() {

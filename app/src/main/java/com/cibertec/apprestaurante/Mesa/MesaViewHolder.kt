@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.request.RequestOptions
 import com.cibertec.apprestaurante.database.Mesa
 import com.cibertec.apprestaurante.R
 
@@ -21,9 +22,14 @@ class MesaViewHolder(inflater: LayoutInflater, parent: ViewGroup):
         textNombre = itemView.findViewById(R.id.textnombre)
     }
 
-    fun bind(mesa: Mesa) {
-        textNumero?.text =mesa.numero.toString()
-        textNombre?.text=mesa.nombre
-    }
+    fun bind(mesa: MesaFirebase) {
+        textNumero?.text = mesa.numero.toString()
+        textNombre?.text = mesa.nombre
 
+      /*  val options = RequestOptions()
+            .placeholder(R.drawable.logo)
+            .error(R.drawable.logo)
+*/
+
+    }
 }

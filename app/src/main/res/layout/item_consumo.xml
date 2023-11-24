@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imgJugo"
+                android:id="@+id/imagenPlato"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/arrozchino"
@@ -36,7 +36,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/P1"
+                android:id="@+id/textTituloPlato"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginTop="20dp"
@@ -47,7 +47,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/D1"
+                android:id="@+id/textCnatidadPlatos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -59,6 +59,3 @@
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
-
-
-

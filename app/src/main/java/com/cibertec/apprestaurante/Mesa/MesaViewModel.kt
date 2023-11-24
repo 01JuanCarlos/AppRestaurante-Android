@@ -138,7 +138,7 @@ class MesaViewModel: ViewModel() {
                 Log.d("TAG", "Error getting documents: ", exception)
             }
     }
-    
+
 
 
 }

@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley
 import com.cibertec.apprestaurante.Activity.CategoriasActivity
 import com.cibertec.apprestaurante.Consumo.ConsumoActivity
 import com.cibertec.apprestaurante.R
+import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -27,6 +28,7 @@ import java.time.format.DateTimeFormatter
 class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
     private lateinit var viewModel: MesaViewModel
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,16 +104,27 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
 
 
-    private fun GuardarFirestore(coleccion:String,nombre:String,numero:Int){
-        var dbRestaurante=FirebaseFirestore.getInstance()
-        val fecha=formatDate(LocalDateTime.now())
-        dbRestaurante.collection(coleccion).document().set(
-            hashMapOf(
-                "nombre" to nombre,
-                "mesa" to numero,
-                "fecha" to fecha
-            )
+    private fun GuardarFirestore(id:String,nombre:String,numero:Int){
+
+      //  val fecha=formatDate(LocalDateTime.now())
+
+        firestore = FirebaseFirestore.getInstance()
+        val docRef = firestore.collection("orden").document(id)
+
+        val updates = hashMapOf<String, Any>(
+            "consumo" to nombre,
+            // Otros campos que desees actualizar
         )
+
+        docRef
+            .update(updates)
+            .addOnSuccessListener {
+                // Actualización exitosa
+            }
+            .addOnFailureListener { e ->
+                // Error al actualizar el documento
+            }
+
     }
 
 
@@ -152,3 +165,5 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
         startActivity(intent)
     }
 }
+
+

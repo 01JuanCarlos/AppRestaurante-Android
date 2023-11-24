@@ -1,6 +1,5 @@
 package com.cibertec.apprestaurante.Productos
 
-import com.cibertec.apprestaurante.database.Categoria
 
 
 
@@ -14,4 +13,12 @@ data class ProductosFirebase(
 ) {
     constructor(nombre: String, precio: String) :
             this("", nombre, precio, "", "")
+    constructor() : this("", "")
+    fun toMap(): Map<String, Any?> {
+        return mapOf(
+            "nombre_produc" to nombre,
+            "precio" to precio
+            // Agrega otros campos si es necesario
+        )
+    }
 }

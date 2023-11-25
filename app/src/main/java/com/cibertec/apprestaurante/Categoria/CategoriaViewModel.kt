@@ -63,12 +63,17 @@ class CategoriaViewModel: ViewModel() {
                         if (item is Map<*, *>) {
                             val nombreProducto = item["nombre_produc"] as? String
                             val precio = item["precio"] as? String
-                            var pre=precio.toString()
                             val descripcion = item["descripcion"] as String
+                            val precioDouble: Double? = precio?.toDoubleOrNull()
 
                             if (nombreProducto !=null && precio !=null && descripcion !=null) {
-                                val product = ProductosFirebase(nombreProducto,pre,descripcion)
-                                listProduct.add(product)
+                                val product = precioDouble?.let {
+                                    ProductosFirebase(nombreProducto,
+                                        it,descripcion)
+                                }
+                                if (product != null) {
+                                    listProduct.add(product)
+                                }
 
                             }
                         }

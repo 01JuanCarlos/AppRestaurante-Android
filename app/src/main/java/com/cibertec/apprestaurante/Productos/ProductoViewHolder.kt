@@ -22,7 +22,7 @@ RecyclerView.ViewHolder(inflater.inflate(R.layout.item_foods, parent, false)){
 
     fun bind(producto: ProductosFirebase){
         textTitle?.text = producto.nombre
-        textPrice?.text = producto.precio
+        textPrice?.text = producto.precio.toString()
        // textDescription?.text = producto.descripcion
     }
 }

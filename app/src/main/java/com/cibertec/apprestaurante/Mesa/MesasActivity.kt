@@ -42,7 +42,7 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
         }
         val btnadd = findViewById<ImageButton>(R.id.btn_add)
         btnadd.setOnClickListener{
-            RegistrarMesa(0)
+            RegistrarMesa()
         }
 
 
@@ -50,9 +50,9 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
 
 
-    fun RegistrarMesa(tipo : Int) {
+    fun RegistrarMesa() {
 
-        val titleAlertMesa=if(tipo==0)"Agregar nueva mesa" else "Editar mesa"
+        val titleAlertMesa="Agregar nueva mesa"
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle(titleAlertMesa)
@@ -68,28 +68,17 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
         val btnCreate = dialogLayout.findViewById<Button>(R.id.btnCreate)
         val mAlertDialog = builder.show()
 
-        /*if(tipo==1){
-            edtNombre.setText(mesa?.nombre)
-            edtNumero.setText(mesa?.numero.toString())
-        }
-*/
+
         btnCreate.setOnClickListener {
             mAlertDialog.dismiss()
             var nombre = edtNombre.text.toString()
             val numero = edtNumero.text.toString().toInt()
 
-            if(tipo==0){
-                //var mesa=MesaFirebase(nombre,numero)
+
                 GuardarFirestore("orden",nombre,numero)
-           //     viewModel.saveMesaWithCoroutines(mesa)
-            }else{
-               /* var mesaUpdate=Mesa(numero,nombre,date)
-                mesaUpdate.Id_mesa=mesa?.Id_mesa!!
-                mesaViewModel.upateMesaWithCoroutines(mesaUpdate)*/
-            }
 
 
-          //  Toast.makeText(this, nombre, Toast.LENGTH_LONG).show()
+
         }
 
     }
@@ -149,10 +138,11 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
     override fun onItemClick(mesa: MesaFirebase) {
         val numero = mesa.numero.toString()
         val id=mesa.id
-
+        val pago=mesa.pago_total
         val intent = Intent(this, ConsumoActivity::class.java)
         intent.putExtra("mesa", numero)
         intent.putExtra("id_mesa", id)
+        intent.putExtra("pago_total", pago)
 
         startActivity(intent)
     }

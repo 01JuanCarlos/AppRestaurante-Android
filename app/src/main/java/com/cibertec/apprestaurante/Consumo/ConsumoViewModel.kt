@@ -1,14 +1,8 @@
 package com.cibertec.apprestaurante.Consumo
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
+
 import androidx.lifecycle.ViewModel
-import com.cibertec.apprestaurante.Mesa.MesaFirebase
-import com.cibertec.apprestaurante.Mesa.MesaViewModel
-import com.cibertec.apprestaurante.Productos.ProductosFirebase
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
+
 
 class ConsumoViewModel: ViewModel() {
 

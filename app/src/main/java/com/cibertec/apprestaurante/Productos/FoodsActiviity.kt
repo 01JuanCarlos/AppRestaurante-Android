@@ -59,48 +59,43 @@ class FoodsActiviity: AppCompatActivity(), ProductoAdapter.ItemClickPlatos  {
 
     private fun GuardarFirestore(
         nombre: String,
-        precio: String,
+        precio: Double,
         cantidad: Int,
         especif: String,
         fecha: String
     ){
-        //  val fecha=formatDate(LocalDateTime.now())
-
-        println("ID_MESASSSS::::::  $id_mesa")
 
         firestore = FirebaseFirestore.getInstance()
 
         val nuevoProducto = ProductosFirebase(nombre,precio,cantidad,especif,fecha)
-        println("CONSUMO::::::  $nuevoProducto")
         val nuevoProductoMap = nuevoProducto.toMap()
 
-
         val docRef = firestore.collection("orden").document(id_mesa)
-
         docRef.get().addOnSuccessListener { documentSnapshot ->
             if (documentSnapshot.exists()) {
-
-                val pagoTotal = documentSnapshot.getString("pago_total")
-                if (pagoTotal != null) {
-                    // Utiliza el valor de pagoTotal aquí
-                    println("Pago total: $pagoTotal")
-                }
-
-
                 val consumoActual = documentSnapshot.get("consumo") as? List<Map<String, Any>> ?: listOf()
 
-                // Agregar el nuevo producto al array existente
                 val nuevoConsumo = consumoActual.toMutableList()
                 nuevoConsumo.add(nuevoProductoMap as Map<String, Any>)
-
-                // Actualizar el campo 'consumo' en Firestore con el nuevo array
                 docRef.update("consumo", nuevoConsumo)
                     .addOnSuccessListener {
-                        // Éxito al guardar el nuevo producto en el array
                     }
                     .addOnFailureListener { e ->
-                        // Error al guardar el nuevo producto en el array
                     }
+
+             /*   // Actualizar el campo 'precio_total' en Firestore
+                docRef.update("pago_total", nuevoPrecioTotal.toString())
+                    .addOnSuccessListener {
+                        // Éxito al actualizar el precio_total
+                    }
+                    .addOnFailureListener { e ->
+                        // Error al actualizar el precio_total
+                    }
+*/
+
+
+
+
             } else {
                 // El documento con el ID especificado no existe
             }

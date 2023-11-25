@@ -32,6 +32,7 @@ RecyclerView.ViewHolder(inflater.inflate(
         textTitle = itemView.findViewById(R.id.textTituloPlato)
         textDescription = itemView.findViewById(R.id.textDesc)
         textEspecificacion = itemView.findViewById(R.id.text_especif)
+        textPrice=itemView.findViewById(R.id.txt_precio)
 
     }
 
@@ -53,7 +54,7 @@ RecyclerView.ViewHolder(inflater.inflate(
         textCantidas?.text=cantidad.toString()
         textEspecificacion?.text=especificacion
         textTitle?.text = nombreProducto
-        textPrice?.text =textoPrecio
+        textPrice?.text = textoPrecio.toString()
         textFecha?.text=fecha
     }
 }

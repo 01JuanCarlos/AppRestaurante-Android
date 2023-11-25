@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity(){
         //setContentView(R.layout.activity_mesas)
        setContentView(R.layout.activity_rol)
 
-
         //setContentView(R.layoutitem_foods)
   }
 

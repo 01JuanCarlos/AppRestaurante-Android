@@ -34,7 +34,7 @@ class AddcategoriasActivity: AppCompatActivity() {
             var nombre = edtNombre.text.toString()
             var categoria= Categoria(nombre)
             if (nombre!= "") {
-                categoriaViewModel.saveCategoriaWithCoroutines(categoria)
+            //    categoriaViewModel.saveCategoriaWithCoroutines(categoria)
                 showBasicAlertDialog(this,"Categoria: "+nombre,"Agregada Exitosamente!!")
                 edtNombre.setText("")
             } else {

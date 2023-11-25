@@ -24,13 +24,13 @@
         </activity>
         <activity android:name=".Activity.AddcategoriasActivity"/>
         <activity android:name=".Activity.AddplatosActivity"/>
-        <activity android:name=".Activity.CategoriasActivity"/>
+        <activity android:name=".Categoria.CategoriasActivity"/>
         <activity android:name=".Activity.AdministracionActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".Mesa.MesasActivity"/>
         <activity android:name=".Cocina.CocinaActivity"/>
         <activity android:name=".Registro.RegistroActivity"/>
-        <activity android:name=".Activity.FoodsActiviity"/>
+        <activity android:name=".Productos.FoodsActiviity"/>
         <activity android:name=".Activity.RolActivity"/>
         <activity android:name=".Consumo.ConsumoActivity"/>
 

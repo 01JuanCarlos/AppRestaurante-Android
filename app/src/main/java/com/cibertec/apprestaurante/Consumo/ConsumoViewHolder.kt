@@ -12,23 +12,36 @@ import com.cibertec.apprestaurante.R
 
 class ConsumoViewHolder (inflater: LayoutInflater, parent: ViewGroup):
 RecyclerView.ViewHolder(inflater.inflate(
-    R.layout.item_foods, parent, false)){
+    R.layout.item_consumo, parent, false)){
 
     private var imgFood: ImageView? = null
     private var textTitle: TextView? = null
+    private var textCantidas: TextView? = null
+    private var textFecha: TextView? = null
+
     private var textPrice: TextView? = null
     private var textDescription: TextView? = null
+    private var textEspecificacion: TextView? = null
+
+
 
     init {
+        textFecha=itemView.findViewById(R.id.text_fecha)
+        textCantidas=itemView.findViewById(R.id.textCnatidadPlatos)
         imgFood = itemView.findViewById(R.id.imgPort)
-        textTitle = itemView.findViewById(R.id.textTit)
-        textPrice = itemView.findViewById(R.id.textPri)
+        textTitle = itemView.findViewById(R.id.textTituloPlato)
         textDescription = itemView.findViewById(R.id.textDesc)
+        textEspecificacion = itemView.findViewById(R.id.text_especif)
+
     }
 
     fun bind(prod: ProductosFirebase){
         val nombreProducto=prod.nombre
         val textoPrecio=prod.precio
+        val especificacion=prod.especificacion
+        val imagen=prod.imagen
+        val cantidad=prod.cantidad
+        val fecha=prod.fecha
     /*    val nombreProducto =  StringBuilder()
         val textoPrecio = StringBuilder()
 
@@ -37,8 +50,10 @@ RecyclerView.ViewHolder(inflater.inflate(
             textoPrecio.append(producto.precio).append("\n") // Suponiendo que 'precio' es el campo del precio del producto
         }
 */
-
+        textCantidas?.text=cantidad.toString()
+        textEspecificacion?.text=especificacion
         textTitle?.text = nombreProducto
         textPrice?.text =textoPrecio
+        textFecha?.text=fecha
     }
 }

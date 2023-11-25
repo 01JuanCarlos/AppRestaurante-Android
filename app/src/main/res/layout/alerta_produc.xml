@@ -14,29 +14,37 @@
         android:orientation="vertical">
 
 
+        <TextView
+            android:id="@+id/txt_info"
+            android:layout_width="match_parent"
+            android:layout_height="133dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            />
         <EditText
-            android:id="@+id/ect_prod"
+            android:id="@+id/edt_Cantidad"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="producto"
+            android:hint="cantidad"
+            android:maxLines="1"
+            android:inputType="number"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp" />
+        <EditText
+            android:id="@+id/edt_Especi"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Especificacion"
             android:maxLines="1"
             android:inputType="text"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp" />
-        <EditText
-            android:id="@+id/edt_precio"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="precio"
-            android:maxLines="1"
-            android:inputType="text"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp" />
-
 
 
 

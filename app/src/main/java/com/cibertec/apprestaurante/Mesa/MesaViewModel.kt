@@ -4,16 +4,13 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.cibertec.apprestaurante.Productos.ProductosFirebase
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MesaViewModel: ViewModel() {
 
     private lateinit var firestore: FirebaseFirestore
-    private lateinit var firebaseDatabase: FirebaseDatabase
-    private lateinit var databaseReference: DatabaseReference
+
 
     val listMesasMutable=MutableLiveData<List<MesaFirebase>>()
     val listConsumoMutable=MutableLiveData<List<ProductosFirebase>>()
@@ -88,10 +85,13 @@ class MesaViewModel: ViewModel() {
                         if (item is Map<*, *>) {
                             val nombreProducto = item["nombre_produc"] as? String
                             val precio = item["precio"] as? String
-                            //    println("consumo:   $precio")
+                            val especifi=item["especif"] as String
+                            val cantidad=item["cantidad"] as? Long
+                            val fecha=item["fecha"] as String
 
                             if (nombreProducto !=null && precio !=null) {
-                                val product = ProductosFirebase(nombreProducto,precio)
+                                val product = ProductosFirebase(nombreProducto,precio,cantidad.toString().toInt(),especifi,fecha)
+
                                 listProduct.add(product)
 
                             }
@@ -110,7 +110,6 @@ class MesaViewModel: ViewModel() {
                     for (mesa in listMesas) {
                /*         println("ID Mesa: ${mesa.id}")
                         println("Nombre Mesa: ${mesa.nombre}")
-                        // Otros datos de la mesa...
 */
                         val consumoMesa = mesa.consumo
                         val listpro = arrayListOf<ProductosFirebase>()
@@ -119,7 +118,14 @@ class MesaViewModel: ViewModel() {
                             for (producto in consumoMesa) {
                                 val nombre=producto.nombre
                                 val precio=producto.precio
-                                val produc=ProductosFirebase(nombre,precio)
+                                val esepecif=producto.especificacion
+                                val imagen=producto.imagen
+                                val cantidad=producto.cantidad
+                                val fecha=producto.fecha
+
+                                val produc=ProductosFirebase(nombre,precio,cantidad,esepecif,fecha)
+                                println("Productos:   $produc")
+
                                 listpro.add(produc)
 /*
                                 println("Nombre Producto: ${producto.nombre}")

@@ -65,6 +65,7 @@
                     android:text="Jugo de papaya con trozos de manzana y platano"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

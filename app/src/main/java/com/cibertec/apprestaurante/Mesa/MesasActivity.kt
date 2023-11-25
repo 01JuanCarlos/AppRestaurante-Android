@@ -7,20 +7,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.cibertec.apprestaurante.Activity.CategoriasActivity
 import com.cibertec.apprestaurante.Consumo.ConsumoActivity
 import com.cibertec.apprestaurante.R
-import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -160,7 +152,7 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
         val intent = Intent(this, ConsumoActivity::class.java)
         intent.putExtra("mesa", numero)
-        intent.putExtra("id", id)
+        intent.putExtra("id_mesa", id)
 
         startActivity(intent)
     }

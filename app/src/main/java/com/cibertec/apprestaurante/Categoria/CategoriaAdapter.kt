@@ -3,14 +3,13 @@ package com.cibertec.apprestaurante.Categoria
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.cibertec.apprestaurante.Activity.CategoriasActivity
-import com.cibertec.apprestaurante.database.Categoria
 
-class CategoriaAdapter(val mItemClickListener: CategoriasActivity):
+class CategoriaAdapter(val mItemClickListener: ItemClickCategoria):
 RecyclerView.Adapter<CategoriaViewHolder>(){
-    private var categoriaLis = emptyList<Categoria>()
 
-    fun setCategoria(categorias: List<Categoria>){
+    private var categoriaLis = emptyList<CategoriaFirestore>()
+
+    fun setCategoria(categorias: List<CategoriaFirestore>){
         this.categoriaLis = categorias
         this.notifyDataSetChanged()
     }
@@ -24,10 +23,17 @@ RecyclerView.Adapter<CategoriaViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: CategoriaViewHolder, position: Int) {
-        val categoria: Categoria = categoriaLis[position]
+        val categoria: CategoriaFirestore = categoriaLis[position]
         holder.bind(categoria)
 
+        holder.itemView.setOnClickListener {
+            mItemClickListener.onItemClick(categoria)
+        }
     }
 
+    interface ItemClickCategoria{
+        fun onItemClick(categoria: CategoriaFirestore)
+
+    }
 
 }

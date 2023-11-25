@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cibertec.apprestaurante.R
 import com.cibertec.apprestaurante.database.Plato
 
-class PlatoViewHolder (inflater: LayoutInflater, parent: ViewGroup):
+class ProductoViewHolder (inflater: LayoutInflater, parent: ViewGroup):
 RecyclerView.ViewHolder(inflater.inflate(R.layout.item_foods, parent, false)){
+
     private var textTitle: TextView? = null
     private var textPrice: TextView? = null
     private var textDescription: TextView? = null
@@ -19,9 +20,9 @@ RecyclerView.ViewHolder(inflater.inflate(R.layout.item_foods, parent, false)){
         textDescription = itemView.findViewById(R.id.textDesc)
     }
 
-    fun bind(plato: Plato){
-        textTitle?.text = plato.nombre
-        textPrice?.text = plato.precio.toString()
-        textDescription?.text = plato.descripcion
+    fun bind(producto: ProductosFirebase){
+        textTitle?.text = producto.nombre
+        textPrice?.text = producto.precio
+       // textDescription?.text = producto.descripcion
     }
 }

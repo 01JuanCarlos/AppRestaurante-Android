@@ -2,7 +2,6 @@ package com.cibertec.apprestaurante.Activity
 
 import android.app.AlertDialog
 import android.content.Context
-import android.icu.text.Transliterator.Position
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -10,22 +9,20 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
-import android.widget.Toast
 
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.cibertec.apprestaurante.Categoria.CategoriaViewModel
-import com.cibertec.apprestaurante.Plato.PlatoViewModel
+import com.cibertec.apprestaurante.Plato.ProductViewModel
 
 import com.cibertec.apprestaurante.R
 import com.cibertec.apprestaurante.database.Categoria
 import com.cibertec.apprestaurante.database.Plato
-import java.text.FieldPosition
 
 class AddplatosActivity:  AppCompatActivity() {
 
-    private lateinit var platoViewModel: PlatoViewModel
+    private lateinit var platoViewModel: ProductViewModel
     private lateinit var categiriaViewModel: CategoriaViewModel
     private lateinit var listacat: ArrayList<Categoria>
 
@@ -40,7 +37,7 @@ class AddplatosActivity:  AppCompatActivity() {
 
 
         platoViewModel=run {
-            ViewModelProvider(this)[PlatoViewModel::class.java]
+            ViewModelProvider(this)[ProductViewModel::class.java]
         }
         categiriaViewModel=run {
             ViewModelProvider(this)[CategoriaViewModel::class.java]
@@ -49,7 +46,7 @@ class AddplatosActivity:  AppCompatActivity() {
         spinner = findViewById(R.id.editTextCategory)
 
         var arrayCategorias = emptyArray<String>()
-
+/**
         categiriaViewModel.categoria?.observe(this) {
             listacat= it as ArrayList<Categoria>
             println("ArrayCAtegorias:   "+listacat)
@@ -59,7 +56,7 @@ class AddplatosActivity:  AppCompatActivity() {
                 ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayCategorias)
             spinner?.adapter = adaptador
         }
-
+*/
 
        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -95,7 +92,7 @@ class AddplatosActivity:  AppCompatActivity() {
             var plato = Plato(nombre, categoria,  descripcion, precio)
 
             if (nombre!="" && descripcion!="" ) {
-                platoViewModel.savePlatoWithCoroutines(plato)
+             //   platoViewModel.savePlatoWithCoroutines(plato)
                 showBasicAlertDialog(this,"Se agrego el plato exitosamente","Nombre: "+nombre+"\n"+"Categoria: "+categoria+"\n"+"Descripcion: "+descripcion+"\n"+"Precio: S/"+precio)
                 edtNombre.setText("")
                 edtDescripcion.setText("")

@@ -19,7 +19,7 @@ RecyclerView.ViewHolder(inflater.inflate(R.layout.item_categorias, parent, false
         txtCategoria = itemView.findViewById(R.id.txtCategoria)
     }
 
-    fun bind(categoria: Categoria){
+    fun bind(categoria: CategoriaFirestore){
         txtCategoria?.text = categoria.nombre
     }
 }

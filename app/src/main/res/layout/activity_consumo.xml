@@ -63,5 +63,18 @@
         app:layout_constraintVertical_bias="0.944"
         app:srcCompat="@drawable/baseline_add_24" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_recargar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:elevation="40dp"
+
+        android:background="@drawable/baseline_autorenew_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

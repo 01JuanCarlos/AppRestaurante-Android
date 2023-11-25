@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="125dp"
+    android:layout_height="145dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="20dp"
     app:cardCornerRadius="20dp"
@@ -39,7 +39,7 @@
                 android:id="@+id/textTituloPlato"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="4dp"
                 android:gravity="center"
                 android:text="Jugo de naranja"
                 android:textColor="@color/black"
@@ -55,6 +55,26 @@
                 android:text="Cant: 3"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_especif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="left"
+                android:text="Sin arroz \n Sin arroz"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text_fecha"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="20/11/2023"
+                android:textColor="#2196F3"
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

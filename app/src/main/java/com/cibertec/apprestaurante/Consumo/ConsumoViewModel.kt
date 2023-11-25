@@ -12,7 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class ConsumoViewModel: ViewModel() {
 
-    private lateinit var firestore: FirebaseFirestore
+    /*private lateinit var firestore: FirebaseFirestore
 
 
     val listConsumoMutable=MutableLiveData<List<ProductosFirebase>>()
@@ -45,6 +45,6 @@ class ConsumoViewModel: ViewModel() {
             .addOnFailureListener { exception ->
                 Log.d("TAG", "Error getting documents: ", exception)
             }
-    }
+    }*/
 
 }

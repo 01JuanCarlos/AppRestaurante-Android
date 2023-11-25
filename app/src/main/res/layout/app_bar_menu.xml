@@ -23,14 +23,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="112dp"
-        android:layout_height="14dp"
-        android:layout_marginLeft="250dp"
-        app:layout_anchor="@+id/appBarLayout"
-        app:layout_anchorGravity="center" />
-
     <ImageView
         android:id="@+id/btn_menu"
         android:layout_width="50dp"

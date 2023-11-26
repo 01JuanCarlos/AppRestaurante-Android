@@ -4,13 +4,18 @@ package com.cibertec.apprestaurante.Mesa
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.cibertec.apprestaurante.Consumo.ConsumoActivity
 import com.cibertec.apprestaurante.R
 import com.google.firebase.firestore.FirebaseFirestore
@@ -37,6 +42,7 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
         viewModel.listMesasMutable.observe(this){listMesas->
             if(listMesas.isNotEmpty()){
+
                 adapter.setMesa(listMesas)
             }
         }
@@ -46,6 +52,23 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
         }
 
 
+
+
+        configSwipe()
+
+    }
+    fun configSwipe(){
+        val swipe =findViewById<SwipeRefreshLayout>(R.id.swipe)
+        swipe.setColorSchemeResources(R.color.cheleste,R.color.green)
+        swipe.setOnRefreshListener {
+            val intent = intent
+            Handler(Looper.getMainLooper()).postDelayed({
+                finish()
+                startActivity(intent)
+                swipe.isRefreshing=false
+            },1500)
+
+        }
     }
 
 
@@ -73,9 +96,9 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
             mAlertDialog.dismiss()
             var nombre = edtNombre.text.toString()
             val numero = edtNumero.text.toString().toInt()
+            println("MESA: "+" id "+nombre+" "+" "+numero)
 
-
-                GuardarFirestore("orden",nombre,numero)
+                GuardarFirestore(nombre,numero)
 
 
 
@@ -85,26 +108,24 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
 
 
-    private fun GuardarFirestore(id:String,nombre:String,numero:Int){
+    private fun GuardarFirestore(nombre:String,numero:Int){
 
       //  val fecha=formatDate(LocalDateTime.now())
 
         firestore = FirebaseFirestore.getInstance()
-        val docRef = firestore.collection("orden").document(id)
 
-        val updates = hashMapOf<String, Any>(
-            "consumo" to nombre,
-            // Otros campos que desees actualizar
+        val mesa = hashMapOf<String, Any>(
+            "nombre" to nombre,
+            "mesa" to numero,
+            "estado" to "En espera"
         )
-
-        docRef
-            .update(updates)
-            .addOnSuccessListener {
-                // Actualización exitosa
+      firestore.collection("orden")
+            .add(mesa)
+            .addOnSuccessListener { documentReference ->
             }
             .addOnFailureListener { e ->
-                // Error al actualizar el documento
             }
+
 
     }
 

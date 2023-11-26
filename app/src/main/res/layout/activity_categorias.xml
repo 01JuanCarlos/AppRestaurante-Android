@@ -12,8 +12,10 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-1dp" />
+
     <TextView
 
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -29,22 +31,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCategorias"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_categorias"
-        android:layout_marginTop="50dp"/>
-    <Button
-        android:id="@+id/btn_saltarFod"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/gray"
-        android:hint="saltar"
-        android:textColorHint="@color/white"
+        android:layout_width="406dp"
+        android:layout_height="613dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
+        app:layout_constraintVertical_bias="0.694"
+        tools:ignore="MissingConstraints"
+        tools:listitem="@layout/item_categorias" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

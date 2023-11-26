@@ -2,31 +2,35 @@ package com.cibertec.apprestaurante.Cocina
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.cibertec.apprestaurante.Mesa.MesaFirebase
 
 import com.cibertec.apprestaurante.Mesa.MesaViewModel
+import com.cibertec.apprestaurante.Pedidos.PedidosActivity
 import com.cibertec.apprestaurante.database.Mesa
 import com.cibertec.apprestaurante.R
 
 
 class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
 {
-    private lateinit var ViewModel: CocinaViewModel
+    private lateinit var ViewModel: MesaViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocina)
 
-        ViewModel = ViewModelProvider(this)[CocinaViewModel::class.java]
-        ViewModel.getMesaFirebase()
+        ViewModel = ViewModelProvider(this)[MesaViewModel::class.java]
+        ViewModel.getMesasFirebase()
 
 
         ViewModel=run {
-            ViewModelProvider(this)[CocinaViewModel::class.java]
+            ViewModelProvider(this)[MesaViewModel::class.java]
         }
         val recyclerMesas = findViewById<RecyclerView>(R.id.recyclerMesasCocina)
         val adapter= CocinaAdapter(this)
@@ -38,6 +42,18 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
             mesa?.let{
                 adapter.setMesa(mesa)
             }
+        }
+
+        val swipe=findViewById<SwipeRefreshLayout>(R.id.swipe_Cocina)
+
+        swipe.setColorSchemeResources(R.color.cheleste,R.color.green)
+        swipe.setOnRefreshListener {
+            val intent = intent
+            Handler(Looper.getMainLooper()).postDelayed({
+                finish()
+                startActivity(intent)
+                swipe.isRefreshing=false
+            },1500)
 
         }
 
@@ -47,9 +63,10 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
     }
 
     override fun onItemClick(mesa: MesaFirebase) {
-        val intent = Intent(this, CocinaActivity::class.java)
+        val intent = Intent(this, PedidosActivity::class.java)
         intent.putExtra("nombre", mesa.nombre)
-        intent.putExtra("numero", mesa.numero)
+        intent.putExtra("id", mesa.id)
+        println("ID: "+mesa.id)
         startActivity(intent)
 
     }

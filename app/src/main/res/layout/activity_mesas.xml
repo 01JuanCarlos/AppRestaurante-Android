@@ -24,11 +24,20 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-61dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerMesas"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/item_mesas" />
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerMesas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_mesas" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
 
     </LinearLayout>

@@ -17,8 +17,12 @@ class PedidosViewHolder (inflater: LayoutInflater, parent: ViewGroup):
     private var imagenPlato: ImageView? = null
     private var textTituloPlato: TextView? = null
     private var textCnatidadPlatos: TextView? = null
+    private var txtEspecifi: TextView? = null
+
+
 
     init {
+        txtEspecifi=itemView.findViewById(R.id.text_especif)
         imagenPlato = itemView.findViewById(R.id.imagenPlato)
         textTituloPlato = itemView.findViewById(R.id.textTituloPlato)
         textCnatidadPlatos = itemView.findViewById(R.id.textCnatidadPlatos)
@@ -28,6 +32,7 @@ class PedidosViewHolder (inflater: LayoutInflater, parent: ViewGroup):
     fun bind(pedido: PedidosFirebase) {
         textTituloPlato?.text = pedido.nombre
         textCnatidadPlatos?.text = pedido.categoria
+       //txtEspecifi?.text=pedido.
 
         val options = RequestOptions()
             .placeholder(R.drawable.fondopantalla)

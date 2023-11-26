@@ -27,6 +27,7 @@
         <activity android:name=".Categoria.CategoriasActivity"/>
         <activity android:name=".Activity.AdministracionActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".Pedidos.PedidosActivity"/>
         <activity android:name=".Mesa.MesasActivity"/>
         <activity android:name=".Cocina.CocinaActivity"/>
         <activity android:name=".Registro.RegistroActivity"/>

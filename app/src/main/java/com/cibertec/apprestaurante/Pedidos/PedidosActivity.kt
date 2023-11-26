@@ -1,17 +1,24 @@
 package com.cibertec.apprestaurante.Pedidos
 
-import android.content.Intent
+import android.app.AlertDialog
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TableLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cibertec.apprestaurante.Consumo.ConsumoAdapter
+import com.cibertec.apprestaurante.Mesa.MesaViewModel
 import com.cibertec.apprestaurante.R
-import com.cibertec.apprestaurante.Model.Pedidos
 
-class PedidosActivity: AppCompatActivity(), PedidosAdapter.ItemClickListener
-{
-    private lateinit var viewModel: PedidosViewModel
+import com.cibertec.apprestaurante.Productos.ProductosFirebase
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
+
+class PedidosActivity: AppCompatActivity(),ConsumoAdapter.ItemClickConsumo
+{    private var id: String = ""
+    private lateinit var viewModel: MesaViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,31 +26,76 @@ class PedidosActivity: AppCompatActivity(), PedidosAdapter.ItemClickListener
         setContentView(R.layout.activity_pedidos_cocina)
 
 
-        viewModel = ViewModelProvider(this)[PedidosViewModel::class.java]
-        viewModel.getPlatoFirebase()
+        viewModel = ViewModelProvider(this)[MesaViewModel::class.java]
+        id = intent.getStringExtra("id") ?: ""
+        viewModel.getConsumoID(id)
 
 
         val recyclePedido = findViewById<RecyclerView>(R.id.recyclerPedidos)
-        val adapter= PedidosAdapter(this)
+        val adapter= ConsumoAdapter(this)
         recyclePedido.adapter=adapter
         recyclePedido.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
 
-        viewModel.listPedidoMutable?.observe(this){ pedidos->
-            pedidos?.let{
-                adapter.setPedisos(pedidos)
-            }
+        viewModel.listConsumoMutable?.observe(this){ pedidos->
 
+            pedidos?.let{
+                adapter.setConsumo(pedidos)
+            }
         }
+
+        val btn_Entrega=findViewById<Button>(R.id.btn_entrega)
+        btn_Entrega.setOnClickListener{
+            alerta()
+        }
+
+
     }
 
-    override fun onItemClick(pedidos: PedidosFirebase) {
 
-        val intent = Intent(this, PedidosActivity::class.java)
+
+
+    fun alerta(){
+        val builder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val dialogLayout = inflater.inflate(R.layout.alerta_confrimacion, null)
+        builder.setView(dialogLayout)
+
+        val btnconf = dialogLayout.findViewById<Button>(R.id.btn_confirmar)
+
+
+        val mAlertDialog = builder.show()
+
+        btnconf.setOnClickListener {
+            cambiarEstado()
+            mAlertDialog.dismiss()
+        }
+
+    }
+    fun cambiarEstado() {
+        val db = Firebase.firestore
+        val documentId = id
+        val campoAActualizar = "estado"
+        val nuevoValor = "Atendido"
+
+        val referenciaDocumento = db.collection("orden").document(documentId)
+
+        referenciaDocumento.update(campoAActualizar, nuevoValor)
+            .addOnSuccessListener {
+            }
+            .addOnFailureListener { e ->
+            }
+
+    }
+
+    override fun onItemClick(producto: ProductosFirebase) {
+
+
+
+       /* val intent = Intent(this, PedidosActivity::class.java)
         intent.putExtra("nombre", pedidos.nombre)
         intent.putExtra("categoria", pedidos.categoria)
         intent.putExtra("imagen", pedidos.imagen)
-        startActivity(intent)
-
+        startActivity(intent)    */
     }
 }

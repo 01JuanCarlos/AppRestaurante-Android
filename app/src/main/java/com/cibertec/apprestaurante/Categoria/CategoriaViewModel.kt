@@ -64,15 +64,16 @@ class CategoriaViewModel: ViewModel() {
                             val nombreProducto = item["nombre_produc"] as? String
                             val precio = item["precio"] as? String
                             val descripcion = item["descripcion"] as String
-                            val precioDouble: Double? = precio?.toDoubleOrNull()
+                            val imagen = item["imagen"] as String
 
-                            if (nombreProducto !=null && precio !=null && descripcion !=null) {
+                            val precioDouble: Double? = precio?.toDoubleOrNull()
+                            if (nombreProducto !=null && precio !=null && descripcion !=null && imagen !=null) {
                                 val product = precioDouble?.let {
-                                    ProductosFirebase(nombreProducto,
-                                        it,descripcion)
+                                    ProductosFirebase(nombreProducto,precioDouble,descripcion,imagen)
                                 }
                                 if (product != null) {
                                     listProduct.add(product)
+
                                 }
 
                             }
@@ -96,11 +97,14 @@ class CategoriaViewModel: ViewModel() {
                             for (producto in ProductosCate) {
                                 val nombre=producto.nombre
                                 val precio=producto.precio
-                                val produc= ProductosFirebase(nombre,precio)
+                                val imagen=producto.imagen
+                                val descrip=producto.descrip
+                                val produc= ProductosFirebase(nombre,precio,descrip,imagen)
                                 listpro.add(produc)
-
                             }
                             listProductosMutable.value=listpro
+                            println("IMAGEN: "+listProductosMutable.value)
+
                         }
                     }}
             }

@@ -11,7 +11,7 @@ class PedidosViewModel: ViewModel() {
     val listPedidoMutable = MutableLiveData<List<PedidosFirebase>>()
 
     fun getPlatoFirebase() {
-        firestore = FirebaseFirestore.getInstance()
+    /*    firestore = FirebaseFirestore.getInstance()
         firestore.collection("pedidos").get()
             .addOnSuccessListener { documentList ->
                 var listaPedidos = arrayListOf<PedidosFirebase>()
@@ -30,7 +30,7 @@ class PedidosViewModel: ViewModel() {
             }
             .addOnFailureListener { exception ->
                 Log.d("TAG", "Error getting documents: ", exception)
-            }
+            }*/
     }
 
 }

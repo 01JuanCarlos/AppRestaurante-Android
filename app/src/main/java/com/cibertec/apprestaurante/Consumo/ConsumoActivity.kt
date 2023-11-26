@@ -1,28 +1,32 @@
 package com.cibertec.apprestaurante.Consumo
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TableLayout
+import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.cibertec.apprestaurante.Categoria.CategoriasActivity
 import com.cibertec.apprestaurante.Mesa.MesaViewModel
 import com.cibertec.apprestaurante.Productos.ProductosFirebase
 
 import com.cibertec.apprestaurante.R
-import com.google.firebase.firestore.FirebaseFirestore
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 
 class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
     private var mesa: String = ""
     private var id: String = ""
-    private var pago_total: String = ""
-    private lateinit var firestore: FirebaseFirestore
 
     private lateinit var viewModel: MesaViewModel
 
@@ -50,9 +54,8 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
                 adapter.setConsumo(listProd)
             }
         }
-        val pago=findViewById<TextView>(R.id.text_pago)
 
-        viewModel.listMesasMutable.observe(this) { listmesa ->
+       /* viewModel.listMesasMutable.observe(this) { listmesa ->
             if (listmesa.isNotEmpty()) {
                 for (mesa in listmesa) {
                     val pagoTotalMesa = mesa.pago_total
@@ -60,7 +63,7 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
 
                 }
             }
-        }
+        }*/
 
         //obtenemos el numero de mesa
         mesa = intent.getStringExtra("mesa") ?: ""
@@ -76,17 +79,156 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
         }
 
 
-        val btn_recargar = findViewById<Button>(R.id.btn_recargar)
-        btn_recargar.setOnClickListener{
-            val intent = intent
+        val swipe = findViewById<SwipeRefreshLayout>(R.id.swipeC)
+        swipe.setColorSchemeResources(R.color.cheleste,R.color.green)
 
-            finish()
-            startActivity(intent)
+        swipe.setOnRefreshListener {
+
+            val intent = intent
+            Handler(Looper.getMainLooper()).postDelayed({
+                finish()
+                startActivity(intent)
+                swipe.isRefreshing=false
+            },1500)
+
+        }
+
+
+        val btn_cancelacion =findViewById<Button>(R.id.btn_cancelacion)
+        btn_cancelacion.setOnClickListener{
+            alert()
+            Estado()
+        }
+
+    }
+
+    fun alert(){
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Esta Mesa contiene" )
+        val inflater = layoutInflater
+        val dialogLayout = inflater.inflate(R.layout.alerta_pago, null)
+        builder.setView(dialogLayout)
+
+        val btnEfectuar = dialogLayout.findViewById<Button>(R.id.btn_efecutar)
+        val tableLayout = dialogLayout.findViewById<TableLayout>(R.id.tableLayout)
+        crear_tabla(tableLayout)
+
+
+        val mAlertDialog = builder.show()
+
+        btnEfectuar.setOnClickListener {
+
+            mAlertDialog.dismiss()
+
         }
 
     }
 
 
+    fun Estado(){
+        val db = Firebase.firestore
+        val documentId = id
+        val campoAActualizar = "estado"
+        val nuevoValor = "Cancelado"
+
+        val referenciaDocumento = db.collection("orden").document(documentId)
+
+        referenciaDocumento.update(campoAActualizar, nuevoValor)
+            .addOnSuccessListener {
+            }
+            .addOnFailureListener { e ->
+            }
+    }
+
+
+   fun crear_tabla(tabla:TableLayout){
+       var totalAPagar = 0.0
+       // Establecer los márgenes entre las celdas
+       val params = TableRow.LayoutParams(
+           TableRow.LayoutParams.WRAP_CONTENT,
+           TableRow.LayoutParams.WRAP_CONTENT
+       )
+       params.setMargins(10, 10, 10, 10) // Ajusta los márgenes según tu preferencia
+       // Crear fila para encabezados
+       val headerRow = TableRow(this)
+
+       val nombreHeader = TextView(this)
+       nombreHeader.text = "Nombre"
+       val cantHeader = TextView(this)
+       cantHeader.text = "Cantidad"
+       val precioHeader = TextView(this)
+       precioHeader.text = "Precio"
+       val importHeader = TextView(this)
+       importHeader.text = "Importe"
+       // Aplicar los márgenes a cada encabezado
+       nombreHeader.layoutParams = params
+       cantHeader.layoutParams = params
+       precioHeader.layoutParams = params
+       importHeader.layoutParams = params
+
+       // Agregar encabezados a la fila
+       headerRow.addView(nombreHeader)
+       headerRow.addView(cantHeader)
+       headerRow.addView(precioHeader)
+       headerRow.addView(importHeader)
+
+
+       // Agregar la fila de encabezados a la tabla
+       tabla.addView(headerRow)
+
+       // Observar los cambios en la lista de consumos
+       viewModel.listConsumoMutable.observe(this) { listcons ->
+           if (listcons.isNotEmpty()) {
+               for (cons in listcons) {
+                   val nombre = cons.nombre
+                   val cant = cons.cantidad
+                   val precio = cons.precio
+                   val totalProducto = cant * precio
+                   totalAPagar += totalProducto
+
+                   val tableRow = TableRow(this)
+
+                   val nombreTextView = TextView(this)
+                   nombreTextView.text = nombre
+                   val cantTextView = TextView(this)
+                   cantTextView.text = cant.toString()
+                   val precioTextView = TextView(this)
+                   precioTextView.text = precio.toString()
+
+                   val totalPrecio = cant * precio // Calcular el precio total por producto
+
+                   val totalPrecioTextView = TextView(this)
+                   totalPrecioTextView.text = totalPrecio.toString()
+
+                   // Agregar los TextViews a la fila
+                   tableRow.addView(nombreTextView)
+                   tableRow.addView(cantTextView)
+                   tableRow.addView(precioTextView)
+                   tableRow.addView(totalPrecioTextView) // Agregar la columna del total por producto
+
+                   // Agregar la fila a la tabla
+                   tabla.addView(tableRow)
+               }
+
+               // Crear una nueva fila para mostrar el total a pagar
+               val totalRow = TableRow(this)
+
+               val totalLabel = TextView(this)
+               totalLabel.text = "Total a pagar:"
+               val totalValue = TextView(this)
+               totalValue.text = totalAPagar.toString()
+
+               // Agregar los TextViews a la fila del total a pagar
+               totalRow.addView(totalLabel)
+               totalRow.addView(totalValue)
+
+               // Agregar la fila del total a pagar a la tabla
+               tabla.addView(totalRow)
+           }
+       }
+
+    }
 
 
 

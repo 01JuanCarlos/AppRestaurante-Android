@@ -12,29 +12,28 @@ data class ProductosFirebase(
     val fecha: String
 )
 {
-    constructor(nombre: String, precio: Double) :
-            this("", nombre, precio,"", "", "",0,  ""
+    constructor(nombre: String, precio: Double,imagen: String) :
+            this(imagen, nombre, precio,"", "", "",0,  ""
             )
 
-    constructor() : this("", 0.0)
+    constructor() : this("",0.0, "")
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "nombre_produc" to nombre,
             "precio" to precio.toString(),
             "fecha" to fecha,
             "especif" to especificacion,
-            "cantidad" to cantidad
-            // Agrega otros campos si es necesario
+            "cantidad" to cantidad,
+            "imagen" to imagen
         )
     }
 
-    constructor(nombre: String, precio: Double,descrip: String) :
-            this("", nombre, precio,"", descrip, "",0,"")
-
+    constructor(nombre: String, precio: Double,descrip: String,imagen: String) :
+            this(imagen, nombre, precio,"", descrip, "",0,"")
 
     constructor(
-        nombre: String, precio: Double, cantidad: Int, especificacion: String, fecha: String
+        nombre: String, precio: Double, cantidad: Int, especificacion: String, fecha: String,imagen: String
     ) :
-            this("", nombre, precio,especificacion,"", "",cantidad,fecha)
+            this(imagen, nombre, precio,especificacion,"", "",cantidad,fecha)
 
 }

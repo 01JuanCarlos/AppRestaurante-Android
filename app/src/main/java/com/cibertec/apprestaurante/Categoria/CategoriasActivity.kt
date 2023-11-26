@@ -37,10 +37,7 @@ class CategoriasActivity: AppCompatActivity(),CategoriaAdapter.ItemClickCategori
                 adapter.setCategoria(categorias)
             }
         }
-        val btnsalta = findViewById<Button>(R.id.btn_saltarFod)
-        btnsalta.setOnClickListener {
-            startActivity(Intent(this, FoodsActiviity::class.java))
-        }
+
     }
 
     override fun onItemClick(categoria: CategoriaFirestore) {
@@ -48,7 +45,7 @@ class CategoriasActivity: AppCompatActivity(),CategoriaAdapter.ItemClickCategori
 
         val nombre = categoria.nombre
         val id=categoria.id
-        println("IDDDDDDDDDDDDdd$id_mesa")
+     //   println("IDDDDDDDDDDDDdd$id_mesa")
 
         val intent = Intent(this, FoodsActiviity::class.java)
         intent.putExtra("nombre", nombre)

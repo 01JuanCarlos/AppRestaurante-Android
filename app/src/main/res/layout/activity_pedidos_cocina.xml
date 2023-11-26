@@ -31,6 +31,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPedidos"
         android:layout_width="match_parent"
@@ -47,7 +50,7 @@
         tools:listitem="@layout/item_consumo"/>
 
     <Button
-
+        android:id="@+id/btn_entrega"
         android:layout_width="274dp"
         android:layout_height="62dp"
         android:backgroundTint="@color/cheleste"

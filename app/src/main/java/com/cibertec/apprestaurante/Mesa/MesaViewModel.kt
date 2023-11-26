@@ -28,10 +28,11 @@ class MesaViewModel: ViewModel() {
                     val nombre = document.getString("nombre")
                     val numero = document.getLong("mesa")?.toInt()
                     val pagototal = document.getString("pago_total").toString()
+                    val estado = document.getString("estado").toString()
 
 
                     if (id !=null && fecha !=null && nombre != null && numero != null) {
-                        val mesa = MesaFirebase(id, nombre, numero,fecha,pagototal)
+                        val mesa = MesaFirebase(id, nombre, numero,fecha,pagototal,estado )
                        // print("IDDD   $mesa")
                         listMesas.add(mesa)
                     }
@@ -54,17 +55,10 @@ class MesaViewModel: ViewModel() {
             docRef.get().addOnSuccessListener { documentSnapshot ->
 
                 val listMesas = arrayListOf<MesaFirebase>()
-
-
-
                 if (documentSnapshot.exists()) {
-
-
-                    //obtenemos solo el consumo
+                  //obtenemos solo el consumo
                     val consumoArray =
                         documentSnapshot.get("consumo") as? List<Map<String, Any>> ?: listOf()
-
-
                     //recoger precios
                     val precios = consumoArray.mapNotNull { item ->
                         val precio = item["precio"] as? String
@@ -102,6 +96,7 @@ class MesaViewModel: ViewModel() {
                             val especifi = item["especif"] as String
                             val cantidad = item["cantidad"] as? Long
                             val fecha = item["fecha"] as String
+                            val imagen=item["imagen"] as String
 
                             if (nombreProducto != null && precio != null) {
                                 val product = ProductosFirebase(
@@ -109,7 +104,8 @@ class MesaViewModel: ViewModel() {
                                     precio.toDouble(),
                                     cantidad.toString().toInt(),
                                     especifi,
-                                    fecha
+                                    fecha,
+                                    imagen
                                 )
                                 listProduct.add(product)
                             }
@@ -140,14 +136,14 @@ class MesaViewModel: ViewModel() {
                                 val cantidad = producto.cantidad
                                 val fecha = producto.fecha
                                 val produc =
-                                    ProductosFirebase(nombre, precio, cantidad, esepecif, fecha)
+                                    ProductosFirebase(nombre, precio, cantidad, esepecif, fecha,imagen)
                                 listpro.add(produc)
                             }
 
                             //agregamos el consumo a una lista mutable
                             listConsumoMutable.value = listpro
                             listMesasMutable.value = listMesas
-                            println("LISTA MESAA ${listMesasMutable.value}")
+                            println("LISTA MESAA ${listConsumoMutable.value}")
 
 
                         }

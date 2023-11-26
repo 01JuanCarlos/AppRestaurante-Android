@@ -62,12 +62,13 @@ class FoodsActiviity: AppCompatActivity(), ProductoAdapter.ItemClickPlatos  {
         precio: Double,
         cantidad: Int,
         especif: String,
-        fecha: String
+        fecha: String,
+        imagen:String
     ){
 
         firestore = FirebaseFirestore.getInstance()
 
-        val nuevoProducto = ProductosFirebase(nombre,precio,cantidad,especif,fecha)
+        val nuevoProducto = ProductosFirebase(nombre,precio,cantidad,especif,fecha,imagen)
         val nuevoProductoMap = nuevoProducto.toMap()
 
         val docRef = firestore.collection("orden").document(id_mesa)
@@ -108,11 +109,11 @@ class FoodsActiviity: AppCompatActivity(), ProductoAdapter.ItemClickPlatos  {
 
 
     override fun onItemClick(consumo: ProductosFirebase) {
-       //  println("CONSUMOOOOOOO:: "+consumo.nombre)
         val nombre=consumo.nombre
         val precio=consumo.precio
         val descripcion=consumo.descrip
         val fecha=formatDate(LocalDateTime.now())
+        val imagen=consumo.imagen
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Agregar  Consumo" )
@@ -139,7 +140,7 @@ class FoodsActiviity: AppCompatActivity(), ProductoAdapter.ItemClickPlatos  {
             val espe=especif.text.toString()
             println("cantido: "+cant+" especific: "+espe+" fecha "+fecha)
 
-            GuardarFirestore(nombre,precio,cant,espe,fecha)
+            GuardarFirestore(nombre,precio,cant,espe,fecha,imagen)
 
         }
 

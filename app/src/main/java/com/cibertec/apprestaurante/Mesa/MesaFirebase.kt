@@ -8,15 +8,17 @@ data class MesaFirebase(
     val numero: Int,
     val fecha: String,
     val pago_total: String,
-    val consumo: List<ProductosFirebase>
+    val consumo: List<ProductosFirebase>,
+    val estado:String
 ) {
-    constructor(id: String, nombre: String, numero: Int,fecha: String,pago_total: String) : this(
+    constructor(id: String, nombre: String, numero: Int,fecha: String,pago_total: String,estado: String) : this(
         id,
         nombre,
         numero,
         fecha,
         pago_total,
-        listOf()
+        listOf(),
+        estado
     )
 
 
@@ -26,7 +28,8 @@ data class MesaFirebase(
         numero = numero,
         fecha = "",
         pago_total = pago_total,
-        consumo = consumo
+        consumo = consumo,
+        estado="En espera"
     )
 
 

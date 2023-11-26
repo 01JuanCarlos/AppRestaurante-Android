@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.cibertec.apprestaurante.Mesa.MesaFirebase
-import com.cibertec.apprestaurante.Model.Foods
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+
 import com.cibertec.apprestaurante.Productos.ProductosFirebase
 import com.cibertec.apprestaurante.R
 
@@ -28,7 +29,7 @@ RecyclerView.ViewHolder(inflater.inflate(
     init {
         textFecha=itemView.findViewById(R.id.text_fecha)
         textCantidas=itemView.findViewById(R.id.textCnatidadPlatos)
-        imgFood = itemView.findViewById(R.id.imgPort)
+        imgFood = itemView.findViewById(R.id.imagenPlato)
         textTitle = itemView.findViewById(R.id.textTituloPlato)
         textDescription = itemView.findViewById(R.id.textDesc)
         textEspecificacion = itemView.findViewById(R.id.text_especif)
@@ -40,21 +41,26 @@ RecyclerView.ViewHolder(inflater.inflate(
         val nombreProducto=prod.nombre
         val textoPrecio=prod.precio
         val especificacion=prod.especificacion
-        val imagen=prod.imagen
         val cantidad=prod.cantidad
         val fecha=prod.fecha
-    /*    val nombreProducto =  StringBuilder()
-        val textoPrecio = StringBuilder()
 
-        for (producto in prod.consumo) {
-            nombreProducto.append(producto.nombre).append("\n") // Suponiendo que 'nombre' es el campo del nombre del producto
-            textoPrecio.append(producto.precio).append("\n") // Suponiendo que 'precio' es el campo del precio del producto
-        }
-*/
+
         textCantidas?.text=cantidad.toString()
         textEspecificacion?.text=especificacion
         textTitle?.text = nombreProducto
         textPrice?.text = textoPrecio.toString()
         textFecha?.text=fecha
+
+
+        val options = RequestOptions()
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_launcher_background)
+
+        imgFood?.let {
+            Glide.with(it)
+                .setDefaultRequestOptions(options)
+                .load(prod.imagen)
+                .into(it)
+        }
     }
 }

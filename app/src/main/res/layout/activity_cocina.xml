@@ -5,58 +5,92 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingDefaultResource">
+    tools:ignore="MissingDefaultResource"
+    android:background="#FFFFFF"
+    >
 
-    <include
+    <androidx.cardview.widget.CardView
         android:id="@+id/app_bar_menu"
-        layout="@layout/app_bar_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-2dp" />
-
-    <TextView
-
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Mesas disponibles"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:layout_height="155dp"
+        android:layout_marginBottom="592dp"
+        app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteX="-2dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rv"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#83000000"
+            android:text="bnklkjhg"
+            android:textColor="#0093000A"
+
+            android:textSize="25dp" />
+
+
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:paddingTop="10dp"
+            android:drawableTint="@color/white"
+            android:backgroundTint="#00FFFFFF"
+            android:drawableTop="@drawable/baseline_keyboard_backspace_24"/>
+
+        <TextView
+
+            android:textStyle="bold"
+            android:id="@+id/textView3"
+            android:layout_width="212dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:text="Ordenes disponibles"
+            android:textColor="#D2FAFAFA"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.777"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+    </androidx.cardview.widget.CardView>
+
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_Cocina"
-        android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_width="377dp"
+        android:layout_height="593dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802">
+        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerMesasCocina"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="4dp"
+            android:layout_height="586dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.804"
-            tools:ignore="MissingConstraints"
+            app:layout_constraintVertical_bias="1.0"
             tools:itemCount="6"
-            tools:listitem="@layout/item_cocina" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            tools:listitem="@layout/item_mesas" />
 
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

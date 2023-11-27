@@ -5,67 +5,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:gravity="center"
-    >
-
-
-    <include
-        android:id="@+id/app_bar_menu"
-        layout="@layout/app_bar_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp" />
+    android:background="@drawable/fondo_cat">
 
     <TextView
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:gravity="center"
-        android:text="Administrar"
+        android:text="ADMINISTRAR"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#92EDE4E4"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
-        app:layout_constraintVertical_bias="0.419"
-        tools:layout_editor_absoluteX="40dp">
-
-        <Button
-            android:elevation="50dp"
-            android:id="@+id/btn_add_categori"
+        <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:backgroundTint="#650AFD"
-            android:text="Agregar Categorias"
-            android:textSize="24dp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
 
-        <Button
-            android:elevation="50dp"
-            android:id="@+id/btn_add_platos"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="#650AFD"
-            android:text="Agregar Platos"
-            android:textSize="24dp" />
+            <Button
+                android:id="@+id/btn_add_categori"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:backgroundTint="@color/fontreg"
+                android:elevation="50dp"
+                android:text="AGREGAR CATEGORIAS"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="10dp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_add_platos"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/fontreg"
+                android:elevation="50dp"
+                android:text="AGREGAR PLATOS"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-

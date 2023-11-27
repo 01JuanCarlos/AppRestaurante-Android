@@ -45,7 +45,7 @@
             android:padding="2dp">
 
             <TextView
-                android:id="@+id/textMesa"
+                android:id="@+id/textNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -56,7 +56,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/numeromesaCocina"
+                android:id="@+id/textMesa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

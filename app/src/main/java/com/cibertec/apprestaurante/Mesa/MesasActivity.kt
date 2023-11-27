@@ -26,6 +26,7 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
     private lateinit var viewModel: MesaViewModel
     private lateinit var firestore: FirebaseFirestore
+    private var numeros = mutableListOf<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +42,10 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
             LinearLayoutManager.VERTICAL,false)
 
         viewModel.listMesasMutable.observe(this){listMesas->
+            for (m in listMesas) {
+                val numero = m.numero
+                numeros.add(numero)
+            }
             if(listMesas.isNotEmpty()){
 
                 adapter.setMesa(listMesas)
@@ -93,12 +98,42 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
 
         btnCreate.setOnClickListener {
+
+
+
             mAlertDialog.dismiss()
             var nombre = edtNombre.text.toString()
             val numero = edtNumero.text.toString().toInt()
-            println("MESA: "+" id "+nombre+" "+" "+numero)
+            if (numeros.contains(numero)) {
+
+                val builder = AlertDialog.Builder(this)
+
+                builder.setTitle("ADVERTENCIA")
+                builder.setMessage("EL NUMERO DE MESA YA SE ENCUENTRA REGISTRADO")
+
+                builder.setPositiveButton("Aceptar") { dialog, which ->
+                }
+
+                val dialog = builder.create()
+                dialog.show()
+
+            } else {
+
 
                 GuardarFirestore(nombre,numero)
+                val builder = AlertDialog.Builder(this)
+
+                builder.setTitle("ORDEN AGREGADA")
+               builder.setMessage("")
+                val dialog = builder.create()
+                dialog.show()
+
+                builder.setPositiveButton("Aceptar") { dialog, which ->
+                }
+               // println("El número $numero no está en el array.")
+            }
+
+
 
 
 

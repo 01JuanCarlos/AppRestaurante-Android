@@ -67,8 +67,8 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
 
         //obtenemos el numero de mesa
         mesa = intent.getStringExtra("mesa") ?: ""
-        val titulo=findViewById<TextView>(R.id.titulo_consumo)
-        titulo.setText(mesa)
+     //   val titulo=findViewById<TextView>(R.id.titulo_consumo)
+        //titulo.setText(mesa)
 
 
         val btn_add = findViewById<ImageButton>(R.id.btn_add_consumo)
@@ -97,7 +97,7 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
         val btn_cancelacion =findViewById<Button>(R.id.btn_cancelacion)
         btn_cancelacion.setOnClickListener{
             alert()
-            Estado()
+
         }
 
     }
@@ -118,7 +118,7 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
         val mAlertDialog = builder.show()
 
         btnEfectuar.setOnClickListener {
-
+            Estado()
             mAlertDialog.dismiss()
 
         }

@@ -2,12 +2,15 @@ package com.cibertec.apprestaurante.Pedidos
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.TableLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.cibertec.apprestaurante.Consumo.ConsumoAdapter
 import com.cibertec.apprestaurante.Mesa.MesaViewModel
 import com.cibertec.apprestaurante.R
@@ -47,6 +50,20 @@ class PedidosActivity: AppCompatActivity(),ConsumoAdapter.ItemClickConsumo
         val btn_Entrega=findViewById<Button>(R.id.btn_entrega)
         btn_Entrega.setOnClickListener{
             alerta()
+        }
+
+        val swipe = findViewById<SwipeRefreshLayout>(R.id.swipeC)
+        swipe.setColorSchemeResources(R.color.cheleste,R.color.green)
+
+        swipe.setOnRefreshListener {
+
+            val intent = intent
+            Handler(Looper.getMainLooper()).postDelayed({
+                finish()
+                startActivity(intent)
+                swipe.isRefreshing=false
+            },1500)
+
         }
 
 

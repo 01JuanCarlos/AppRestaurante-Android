@@ -1,84 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="30dp"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="10dp">
-    <LinearLayout
+    android:layout_width="360dp"
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    android:layout_height="120dp"
+    android:layout_marginTop="1dp"
+    android:backgroundTint="@color/white">
 
-        <androidx.cardview.widget.CardView
+    <TextView
+        android:id="@+id/text_nombre"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Jhostyn Alcantar Benites"
+        android:textColor="#3C3B3B"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/text_numero_mea"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="41dp"
+        android:text="NÂ° 01"
+        android:textColor="#454444"
+        android:textSize="18sp" />
+    <ImageView
+        android:layout_width="37dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/meshas" />
 
-            android:layout_width="match_parent"
-            android:layout_height="68dp"
-            app:cardBackgroundColor="#00BCD4"
-            app:cardCornerRadius="20dp">
-
-            <ImageView
-                android:id="@+id/imgPortada"
-                android:layout_width="100dp"
-                android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image" />
-
-            <ImageView
-                android:id="@+id/btn_edit"
-                android:layout_width="38dp"
-                android:layout_height="42dp"
-                android:layout_gravity="right"
-                android:layout_marginHorizontal="10dp"
-                android:src="@drawable/img"
-                app:tint="@color/white" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textnumero"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:gravity="center"
-            android:text="10"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/textnombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal"
-            android:maxLines="4"
-            android:text="Contenido nombre"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/txt_Estado"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center_horizontal"
-            android:maxLines="4"
-            android:textColor="@color/white"
-            android:background="#E62A1A"
-            android:text="En espera"
-            android:textSize="27dp" />
-
-    </LinearLayout>
-
-
-
+    <Button
+        android:id="@+id/text_estado_C"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="estado"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="15dp"
+        android:padding="4dp"
+        android:textColor="@color/white"
+        android:backgroundTint="#3F51B5"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24" />
 
 </androidx.cardview.widget.CardView>

@@ -12,7 +12,7 @@ import com.cibertec.apprestaurante.R
 
 class CocinaViewHolder(inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(
-        R.layout.item_cocina, parent, false))
+        R.layout.item_mesas, parent, false))
 {
 
     private var textMesa: TextView? = null
@@ -21,15 +21,15 @@ class CocinaViewHolder(inflater: LayoutInflater, parent: ViewGroup):
 
 
     init {
-        estado=itemView.findViewById(R.id.text_estado)
-        textMesa = itemView.findViewById(R.id.textMesa)
-        numeromesaCocina = itemView.findViewById(R.id.numeromesaCocina)    }
+        estado=itemView.findViewById(R.id.text_estado_C)
+        textMesa = itemView.findViewById(R.id.text_nombre)
+        numeromesaCocina = itemView.findViewById(R.id.text_numero_mea)    }
 
 
     fun bind(mesa: MesaFirebase) {
 
         textMesa?.text = mesa.nombre
-        numeromesaCocina?.text = mesa.numero.toString()
+        numeromesaCocina?.text =mesa.numero.toString()
         estado?.text=mesa.estado
         when (mesa.estado) {
             "En espera" -> estado?.setBackgroundColor(Color.parseColor("#FF0F0F"))

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cibertec.apprestaurante.Categoria.CategoriaViewModel
 import com.cibertec.apprestaurante.R
 import com.google.firebase.firestore.FirebaseFirestore
@@ -32,6 +33,9 @@ class FoodsActiviity: AppCompatActivity(), ProductoAdapter.ItemClickPlatos  {
         setContentView(R.layout.activity_foods)
 
         id_mesa = intent.getStringExtra("id_mesa") ?: ""
+        val nom_Cat=findViewById<TextView>(R.id.nom_cat)
+        nombre=intent.getStringExtra("nombre")?:""
+        nom_Cat.setText(nombre)
 
         ViewModel = run{
             ViewModelProvider(this)[CategoriaViewModel::class.java]
@@ -43,7 +47,7 @@ class FoodsActiviity: AppCompatActivity(), ProductoAdapter.ItemClickPlatos  {
         val recyclerFoods = findViewById<RecyclerView>(R.id.recyclerFoods)
         val adapter = ProductoAdapter(this)
         recyclerFoods.adapter = adapter
-        recyclerFoods.layoutManager = LinearLayoutManager(this)
+        recyclerFoods.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
 
         ViewModel.listProductosMutable.observe(this){listProd->
             if(listProd.isNotEmpty()){

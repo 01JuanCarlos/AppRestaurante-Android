@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cibertec.apprestaurante.Consumo.ConsumoActivity
 import com.cibertec.apprestaurante.Productos.FoodsActiviity
 import com.cibertec.apprestaurante.R
@@ -26,17 +28,23 @@ class CategoriasActivity: AppCompatActivity(),CategoriaAdapter.ItemClickCategori
         ViewModel.getCategoriasFirebase()
 
 
+        val recyclerCategorias = findViewById<RecyclerView>(R.id.recyclerCat)
 
-        val recyclerCategorias = findViewById<RecyclerView>(R.id.recyclerCategorias)
+        recyclerCategorias.apply {
+            layoutManager = GridLayoutManager(context, 2)
+        }
+
         val adapter= CategoriaAdapter(this)
         recyclerCategorias.adapter=adapter
-        recyclerCategorias.layoutManager= LinearLayoutManager(this)
+        recyclerCategorias.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
 
         ViewModel.listCategoriasMutable?.observe(this){ categorias->
             categorias?.let{
                 adapter.setCategoria(categorias)
             }
         }
+
+
 
     }
 
@@ -45,7 +53,7 @@ class CategoriasActivity: AppCompatActivity(),CategoriaAdapter.ItemClickCategori
 
         val nombre = categoria.nombre
         val id=categoria.id
-     //   println("IDDDDDDDDDDDDdd$id_mesa")
+
 
         val intent = Intent(this, FoodsActiviity::class.java)
         intent.putExtra("nombre", nombre)

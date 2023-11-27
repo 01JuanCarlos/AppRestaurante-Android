@@ -15,23 +15,22 @@
         tools:targetApi="31">
 
          <activity
-            android:name=".Activity.LoginActivity"
+            android:name="com.cibertec.resprueba.login.LoginActivity"
              android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.AddcategoriasActivity"/>
-        <activity android:name=".Activity.AddplatosActivity"/>
-        <activity android:name=".Categoria.CategoriasActivity"/>
-        <activity android:name=".Activity.AdministracionActivity"/>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Pedidos.PedidosActivity"/>
+
         <activity android:name=".Mesa.MesasActivity"/>
-        <activity android:name=".Cocina.CocinaActivity"/>
-        <activity android:name=".Registro.RegistroActivity"/>
+      <activity android:name=".Activity.AddcategoriasActivity"/>
+        <activity android:name=".Activity.AddplatosActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Categoria.CategoriasActivity"/>
         <activity android:name=".Productos.FoodsActiviity"/>
+        <activity android:name=".Pedidos.PedidosActivity"/>
+        <activity android:name=".Registro.RegistroActivity"/>
         <activity android:name=".Activity.RolActivity"/>
         <activity android:name=".Consumo.ConsumoActivity"/>
 

@@ -3,33 +3,55 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <include
-        android:id="@+id/app_bar_menu"
-        layout="@layout/app_bar_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp" />
-    <TextView
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Desayunos"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
+    <Button
+        android:layout_width="66dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#00FFFFFF"
+        android:drawableBottom="@drawable/baseline_arrow_back_ios_24"
+        android:drawableTint="#283327"
+        app:cardCornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.041" />
+
+    <TextView
+        android:id="@+id/nom_cat"
+        android:layout_width="164dp"
+        android:layout_height="81dp"
+        android:background="#283327"
+        android:paddingTop="24dp"
+        android:text="Desayunos"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerFoods"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_foods"
-        android:layout_marginTop="60dp"/>
+        android:layout_width="315dp"
+        android:layout_height="586dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        tools:ignore="MissingConstraints"
+        tools:itemCount="6"
+        tools:listitem="@layout/item_foods" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.cibertec.apprestaurante.Activity.LoginActivity
 import com.cibertec.apprestaurante.Activity.RolActivity
 import com.cibertec.apprestaurante.R
+import com.cibertec.resprueba.login.LoginActivity
 
 class LauncherActivity: AppCompatActivity() {
     private lateinit var viewModel: LauncherViewModel

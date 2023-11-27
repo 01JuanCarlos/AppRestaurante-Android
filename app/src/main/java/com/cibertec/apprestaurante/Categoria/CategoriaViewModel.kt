@@ -39,6 +39,7 @@ class CategoriaViewModel: ViewModel() {
                     }
                 }
                 listCategoriasMutable.value = listCategoria
+
             }
             .addOnFailureListener{exception ->
                 Log.d("TAG", "Error getting documents: ", exception)}
@@ -115,7 +116,20 @@ class CategoriaViewModel: ViewModel() {
 
     }
 
+    fun crearCategoria(categoria:String){
+        val db = FirebaseFirestore.getInstance()
+        val categoria = hashMapOf(
+            "nombre" to categoria
+        )
 
+        db.collection("categoria")
+            .add(categoria)
+            .addOnSuccessListener { documentReference ->
+            }
+            .addOnFailureListener { e ->
+            }
+
+    }
 
 
 }

@@ -22,13 +22,13 @@ class MesaViewHolder(inflater: LayoutInflater, parent: ViewGroup):
 
 
     init {
-        textNumero = itemView.findViewById(R.id.textnumero)
-        textNombre = itemView.findViewById(R.id.textnombre)
-        textEstado=itemView.findViewById(R.id.txt_Estado)
+        textNumero = itemView.findViewById(R.id.text_numero_mea)
+        textNombre = itemView.findViewById(R.id.text_nombre)
+        textEstado=itemView.findViewById(R.id.text_estado_C)
     }
 
     fun bind(mesa: MesaFirebase) {
-        textNumero?.text = mesa.numero.toString()
+        textNumero?.text ="N° "+mesa.numero.toString()
         textNombre?.text = mesa.nombre
         textEstado?.text=mesa.estado
 

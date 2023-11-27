@@ -44,7 +44,7 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
             }
         }
 
-        val swipe=findViewById<SwipeRefreshLayout>(R.id.swipe_Cocina)
+       val swipe=findViewById<SwipeRefreshLayout>(R.id.swipe_Cocina)
 
         swipe.setColorSchemeResources(R.color.cheleste,R.color.green)
         swipe.setOnRefreshListener {

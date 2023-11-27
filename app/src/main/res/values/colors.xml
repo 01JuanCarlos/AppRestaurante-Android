@@ -70,10 +70,12 @@
     <color name="morado">#650AFD</color>
     <color name="cheleste">#2D9BF0</color>
 
-   
 
+    <color name="font">#545454</color>
+    <color name="fontreg">#2E3235</color>
+    <color name="gray">#868686</color>
+    <color name="greenad">#599B18</color>
 
     <color name="skyblue">#03A9F4</color>
-    <color name="gray">#8D8D8D</color>
 </resources>
 

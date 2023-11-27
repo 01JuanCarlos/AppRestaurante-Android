@@ -1,115 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/fondopantalla">
-
-    <ImageView
-        android:id="@+id/login"
-        android:layout_width="158dp"
-        android:layout_height="158dp"
-        android:src="@drawable/logovallejo" />
-
-    <ImageView
-        android:id="@+id/user"
-        android:layout_width="129dp"
-        android:layout_height="138dp"
-        android:src="@drawable/usuario" />
-
-    <TextView
-        android:id="@+id/bienvenido"
-        android:text="Bienvenido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="25sp" />
+    android:background="@drawable/fondolog">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp">
+        android:id="@+id/cardView2"
+        android:layout_width="135dp"
+        android:layout_height="132dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        tools:ignore="MissingConstraints"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="129dp"
+            android:layout_height="138dp"
+            android:src="@drawable/logovallejo"
+            android:scaleType="centerCrop"
+            android:padding="15dp"/>
+    </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="108dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_margin="15dp">
 
+            <TextView
+                android:id="@+id/bienvenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGIN"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Correo"
-                app:boxBackgroundMode="filled">
-
+                app:boxBackgroundMode="outline"
+                app:startIconDrawable="@drawable/iconemail"
+                app:startIconTint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                android:textColorHint="@color/black"
+                >
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCorreo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:background="@null" />
-
+                    android:background="@null"
+                    android:textColor="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
-                app:boxBackgroundMode="filled"
-                app:passwordToggleEnabled="true">
-
+                app:boxBackgroundMode="outline"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black"
+                app:startIconDrawable="@drawable/iconpass"
+                app:startIconTint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                android:textColorHint="@color/black"
+                >
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtContraseña"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:background="@null" />
-
+                    android:background="@null"
+                    android:textColor="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
-
             <Button
                 android:id="@+id/btnIngresar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:textSize="15sp"
-                android:text="Ingresar"
+                android:text="INGRESAR"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/seed" />
-
+                android:backgroundTint="@color/font"
+                android:textColor="@color/white"
+                app:cornerRadius="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:drawableLeft="@drawable/iconing"
+                android:drawableTint="@color/white"/>
             <Button
                 android:id="@+id/btnRegistrar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:textSize="15sp"
-                android:text="Registrar"
-                android:backgroundTint="@color/seed" />
+                android:text="REGISTRAR"
+                android:backgroundTint="@color/font"
+                app:cornerRadius="5dp"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/iconreg"
+                android:drawableTint="@color/white"/>
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
-
-
-    <ImageView
-        android:id="@+id/google"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:src="@drawable/google" />
-
-    <TextView
-        android:id="@+id/Invitado"
-        android:text="ingresar como invitado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold|italic"
-        android:paddingBottom="30dp"
-        android:textSize="20sp"
-        android:textColor="@color/seed"/>
-
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

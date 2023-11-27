@@ -4,154 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/cheleste"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#00201F1F"
+        android:drawableTop="@drawable/baseline_arrow_back_ios_24"
+        android:drawableTint="#3F51B5"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+
 
     <TextView
         android:id="@+id/texBar"
-        android:layout_width="403dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="141dp"
+        android:layout_height="155dp"
         android:gravity="center"
         android:text="Agregar Plato"
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
+        android:background="#3F51B5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="0dp" />
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/casa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Botón para enviar el formulario -->
-
-    <LinearLayout
-
-        android:layout_width="408dp"
-        android:layout_height="662dp"
-        android:orientation="vertical"
-        android:padding="16dp"
+    <EditText
+        android:id="@+id/editTextPrecio"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="148dp"
+        android:background="@drawable/borde_personalizado"
+        android:hint="Precio"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/editTextCategory"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:background="@drawable/borde_personalizado"
+        android:textAlignment="textStart"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:context=".MainActivity"
-        tools:ignore="MissingConstraints">
-        <!-- Campo para el nombre del producto -->
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.647" />
 
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/borde_personalizado"
-            android:padding="10dp"
-            android:hint="Nombre del producto"
-            android:textSize="20dp" />
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:background="@drawable/borde_personalizado"
+        android:hint="Nombre del producto"
+        android:padding="10dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.307" />
 
-        <Spinner
-            android:id="@+id/editTextCategory"
-            android:layout_width="314dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/borde_personalizado"
-            android:textAlignment="textStart"
-            android:textSize="20dp"
-            tools:layout_editor_absoluteX="119dp"
-            tools:layout_editor_absoluteY="265dp" />
+    <EditText
+        android:id="@+id/editTextInsertarImagen"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:background="@drawable/borde_personalizado"
+        android:hint="Insertar imagen"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:cornerRadius="10dp"
+        android:drawableRight="@drawable/baseline_add_photo_alternate_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.534" />
 
-        <EditText
-            android:id="@+id/editTextDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/borde_personalizado"
-            android:padding="10dp"
-            android:hint="Descripción"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            app:cornerRadius="10dp" />
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:background="@drawable/borde_personalizado"
+        android:hint="Descripcion"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
 
-        <EditText
-            android:id="@+id/editTextInsertarImagen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/borde_personalizado"
-            android:padding="10dp"
-            android:hint="Insertar imagen"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            app:cornerRadius="10dp" />
-
-
-        <!-- Campo para el precio -->
-
-
-        <ImageView
-            android:id="@+id/imgsubirimagen"
-            android:layout_width="59dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="264dp"
-            android:layout_marginTop="-45dp"
-            android:src="@android:drawable/ic_menu_gallery"
-            android:tint="@color/seed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            tools:ignore="UseAppTint" />
-
-        <EditText
-            android:id="@+id/editTextPrecio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/borde_personalizado"
-            android:padding="10dp"
-            android:hint="Precio"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            app:cornerRadius="10dp" />
-
-        <Button
-
-            android:id="@+id/btnguardarplato"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/cheleste"
-            android:drawableLeft="@drawable/guardar"
-            android:gravity="center"
-            android:text="Guardar"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:cornerRadius="10dp" />
-
-
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnguardarplato"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/add"
+        android:backgroundTint="#64A31B"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:srcCompat="@drawable/baseline_save_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

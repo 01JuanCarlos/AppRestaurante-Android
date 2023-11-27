@@ -6,77 +6,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
-    <include
-        android:id="@+id/app_bar_menu"
-        layout="@layout/app_bar_menu"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp" />
-
-    <TextView
-
-        android:textColorHint="@color/white"
-        android:textStyle="bold"
-        android:textSize="23dp"
-        android:gravity="center"
-        android:hint="Agregar Categorias"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        tools:ignore="MissingConstraints" />
-
-    <LinearLayout
-
-
-        android:layout_width="279dp"
-        android:layout_height="596dp"
-        android:orientation="vertical"
+        android:layout_height="230dp"
+        app:cardCornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-2dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-
-            android:id="@+id/nombrecategoria"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:background="@drawable/borde_personalizado"
+            android:layout_height="match_parent"
+            android:background="@drawable/arrozchino"
+            android:scaleType="centerCrop"
+            tools:layout_editor_absoluteX="-17dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/baseline_arrow_back_ios_24"
+            android:scaleType="centerCrop" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="160dp"
+            android:background="@color/white"
+            android:layout_gravity="right"
             android:gravity="center"
-            android:hint="Categoria"
-            android:inputType="text"
-            android:textSize="28dp"
-            app:cornerRadius="15dp"
+            android:hint="Agregar Categorias"
+            android:padding="10dp"
+            android:textColorHint="@color/black"
+            android:textSize="23dp"
+            android:textStyle="bold"
             tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:layout_marginTop="250dp"
-            android:backgroundTint="@color/cheleste"
-            android:gravity="center_horizontal"
-            android:text="@string/guardar"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:cornerRadius="15dp" />
 
-        <Button
-            android:id="@+id/btnEliminar"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:backgroundTint="@color/cheleste"
-            android:gravity="center_horizontal"
-            android:text="@string/eliminar"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:cornerRadius="15dp" />
+    </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+    <com.google.android.material.textfield.TextInputEditText
 
+        android:id="@+id/nombrecategoria"
+        android:layout_width="256dp"
+        android:layout_height="49dp"
+        android:background="@drawable/borde_personalizado"
+        android:gravity="center"
+        android:hint="Categoria"
+        android:inputType="text"
+        android:textSize="28dp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btn_add2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/btn_add"
+        android:backgroundTint="#B31B32"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.809"
+        app:srcCompat="@drawable/baseline_delete_24" />
+
+    <ImageButton
+        android:id="@+id/btnGuardar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/btn_add"
+        android:backgroundTint="#64A31B"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.809"
+        app:srcCompat="@drawable/baseline_save_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

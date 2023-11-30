@@ -3,6 +3,8 @@ package com.cibertec.apprestaurante.Cocina
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.widget.Button
+
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -15,6 +17,7 @@ import com.cibertec.apprestaurante.Mesa.MesaViewModel
 import com.cibertec.apprestaurante.Pedidos.PedidosActivity
 import com.cibertec.apprestaurante.database.Mesa
 import com.cibertec.apprestaurante.R
+import org.checkerframework.common.subtyping.qual.Bottom
 
 
 class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
@@ -27,13 +30,15 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
 
         ViewModel = ViewModelProvider(this)[MesaViewModel::class.java]
         ViewModel.getMesasFirebase()
-
-
         ViewModel=run {
             ViewModelProvider(this)[MesaViewModel::class.java]
         }
         val recyclerMesas = findViewById<RecyclerView>(R.id.recyclerMesasCocina)
         val adapter= CocinaAdapter(this)
+        val espera=findViewById<Button>(R.id.btn_espera)
+        val atendido=findViewById<Button>(R.id.btn_atend)
+        val cancelado=findViewById<Button>(R.id.btn_cancel)
+
         recyclerMesas.adapter=adapter
         recyclerMesas.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
@@ -43,6 +48,33 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
                 adapter.setMesa(mesa)
             }
         }
+        espera.setOnClickListener{
+            ViewModel.getEstado("En espera")
+        }
+        atendido.setOnClickListener{
+            ViewModel.getEstado("Atendido")
+        }
+        cancelado.setOnClickListener{
+            ViewModel.getEstado("Cancelado")
+        }
+
+        recyclerMesas.adapter=adapter
+        recyclerMesas.layoutManager = LinearLayoutManager(this,
+            LinearLayoutManager.VERTICAL, false)
+
+        ViewModel.listMesasMutable?.observe(this){ mesa->
+            mesa?.let{
+                adapter.setMesa(mesa)
+            }
+        }
+
+
+
+
+
+
+
+
 
        val swipe=findViewById<SwipeRefreshLayout>(R.id.swipe_Cocina)
 
@@ -57,6 +89,9 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
 
         }
 
+
+
+
         //layoutManager = GridLayoutManager(context, 2)
         // layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         //  adapter = CocinaAdapter(listMesa)
@@ -68,6 +103,5 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
         intent.putExtra("id", mesa.id)
         println("ID: "+mesa.id)
         startActivity(intent)
-
     }
 }

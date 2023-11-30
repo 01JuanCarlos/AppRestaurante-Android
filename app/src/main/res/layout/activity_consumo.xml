@@ -6,85 +6,75 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:orientation="vertical">
     <androidx.cardview.widget.CardView
-        android:id="@+id/app_bar_menu"
         android:layout_width="match_parent"
-        android:layout_height="155dp"
-        android:layout_marginBottom="592dp"
+        android:layout_height="158dp"
         app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-2dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
 
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/rv"
-            android:scaleType="centerCrop"
-            />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#83000000"
-            android:text="bnklkjhg"
             android:textColor="#0093000A"
-            android:textSize="25dp" />
+            />
 
         <Button
             android:id="@+id/buttonConsumo"
             android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:drawableTop="@drawable/baseline_arrow_back_ios_24"
-            android:layout_marginTop="46dp"
-            android:layout_marginLeft="40dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center_vertical"
             android:backgroundTint="#00000000"
-            app:cornerRadius="0dp"
-            />
+            android:drawableTop="@drawable/baseline_arrow_back_ios_24" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:text="Consumo "
-            android:textColor="#FFFFFF"
-            android:textSize="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:text="Consumo"
+            android:textColor="#D2FAFAFA"
+            android:textSize="40dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022"
-            tools:ignore="MissingConstraints" />
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="10dp"/>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeC"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="-16dp">
-
-
+        android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerConsumo"
-            android:layout_width="414dp"
-            android:layout_height="593dp"
-            android:padding="1dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:ignore="MissingConstraints"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             tools:itemCount="6"
             tools:layout_editor_absoluteX="-5dp"
             tools:listitem="@layout/item_consumo" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
+
 
     <ImageButton
         android:id="@+id/btn_add_consumo"
@@ -96,10 +86,10 @@
         android:elevation="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="@+id/app_bar_menu"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
+        app:layout_constraintVertical_bias="0.950"
+        app:layout_constraintHorizontal_bias="0.950"
         app:srcCompat="@drawable/baseline_restaurant_24" />
 
     <Button
@@ -108,14 +98,26 @@
         android:layout_height="60dp"
         android:backgroundTint="#3F51B5"
         android:text="Cancelado"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:enabled="false"
         app:layout_constraintVertical_bias="0.959" />
 
-
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="Orden vacia"
+    android:textColor="#13629F"
+    android:textSize="35dp"
+    android:gravity="center"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

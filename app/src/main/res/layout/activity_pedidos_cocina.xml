@@ -7,84 +7,98 @@
     android:background="#FFFFFF">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/app_bar_menu"
-        android:layout_width="match_parent"
-        android:layout_height="155dp"
-        android:layout_marginBottom="592dp"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-2dp">
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      >
 
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/rv"
-            android:scaleType="centerCrop"
-            />
+      <androidx.cardview.widget.CardView
+          android:id="@+id/app_bar_menu"
+          android:layout_width="match_parent"
+          android:layout_height="155dp"
+          app:cardCornerRadius="25dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#83000000"
-            android:text="bnklkjhg"
-            android:textColor="#0093000A"
-            android:textSize="25dp" />
-
-        <Button
-            android:id="@+id/buttonConsumo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:drawableTop="@drawable/baseline_arrow_back_ios_24"
-            android:layout_marginTop="46dp"
-            android:layout_marginLeft="40dp"
-            android:backgroundTint="#00000000"
-            app:cornerRadius="0dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:text="Consumo "
-            android:textColor="#FFFFFF"
-            android:textSize="42dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022"
-            tools:ignore="MissingConstraints" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeC"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="-16dp">
+          >
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerPedidos"
-            android:layout_width="414dp"
-            android:layout_height="593dp"
-            android:padding="1dp"
+          <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/rv"
+              android:scaleType="centerCrop" />
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:ignore="MissingConstraints"
-            tools:itemCount="6"
-            tools:layout_editor_absoluteX="-5dp"
-            tools:listitem="@layout/item_consumo" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#83000000"
+              android:text="bnklkjhg"
+              android:textColor="#0093000A"
+              android:textSize="25dp" />
+
+          <Button
+              android:id="@+id/buttonConsumo"
+              android:layout_width="60dp"
+              android:layout_height="60dp"
+              android:layout_marginLeft="40dp"
+              android:layout_marginTop="46dp"
+              android:backgroundTint="#00000000"
+              android:drawableTop="@drawable/baseline_arrow_back_ios_24"
+              app:cornerRadius="0dp" />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="120dp"
+              android:layout_marginTop="50dp"
+              android:gravity="center"
+              android:text="Consumo "
+              android:textColor="#FFFFFF"
+              android:textSize="42dp"
+              android:textStyle="bold"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintVertical_bias="0.022"
+              tools:ignore="MissingConstraints" />
+
+      </androidx.cardview.widget.CardView>
+
+
+      <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+          android:id="@+id/swipeC"
+          android:layout_width="match_parent"
+          android:layout_height="600dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="1.0"
+          tools:layout_editor_absoluteX="-16dp">
+
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/recyclerPedidos"
+              android:layout_width="414dp"
+              android:layout_height="593dp"
+              android:padding="1dp"
+
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintVertical_bias="1.0"
+              tools:ignore="MissingConstraints"
+              tools:itemCount="6"
+              tools:layout_editor_absoluteX="-5dp"
+              tools:listitem="@layout/item_consumo" />
+      </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+  </LinearLayout>
 
 
 
@@ -95,6 +109,7 @@
         android:backgroundTint="#3F51B5"
         android:text="Confirmar"
         android:textSize="20sp"
+        android:enabled="false"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="360dp"
-
+    android:layout_width="match_parent"
     android:layout_height="120dp"
     android:layout_marginTop="1dp"
-    android:backgroundTint="@color/white">
+    android:backgroundTint="@color/white"
+    >
 
     <TextView
         android:id="@+id/text_nombre"
@@ -14,7 +14,7 @@
         android:layout_margin="10dp"
         android:text="Jhostyn Alcantar Benites"
         android:textColor="#3C3B3B"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/text_numero_mea"
@@ -24,7 +24,7 @@
         android:layout_marginTop="41dp"
         android:text="NÂ° 01"
         android:textColor="#454444"
-        android:textSize="18sp" />
+        android:textSize="18dp" />
     <ImageView
         android:layout_width="37dp"
         android:layout_height="30dp"
@@ -36,14 +36,15 @@
         android:id="@+id/text_estado_C"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="estado"
-        android:layout_marginTop="80dp"
         android:layout_marginLeft="15dp"
-        android:padding="4dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="65dp"
         android:backgroundTint="#3F51B5"
-        />
+        android:padding="4dp"
+        android:text="estado"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="33dp"

@@ -161,4 +161,45 @@ class MesaViewModel: ViewModel() {
 
 
 
+    fun getEstado(estado:String){
+        val db = FirebaseFirestore.getInstance()
+        val ordenesRef = db.collection("orden")
+
+        ordenesRef.whereEqualTo("estado", estado)
+            .get()
+            .addOnSuccessListener { documents ->
+                val listMesas = arrayListOf<MesaFirebase>()
+
+                for (document in documents) {
+                    val id = document.id
+                    val fecha = document.getString("fecha").toString()
+                    val nombre = document.getString("nombre")
+                    val numero = document.getLong("mesa")?.toInt()
+                    val pagototal = document.getString("pago_total").toString()
+                    val estado = document.getString("estado").toString()
+
+
+                    if (id !=null && fecha !=null && nombre != null && numero != null) {
+                        val mesa = MesaFirebase(id, nombre, numero,fecha,pagototal,estado )
+                        // print("IDDD   $mesa")
+                        listMesas.add(mesa)
+                    }
+                }
+                listMesasMutable.value = listMesas
+
+            }
+            .addOnFailureListener { exception ->
+
+            }
+
+    }
+    fun getAtendido(){
+
+    }
+    fun getCancelado(){
+
+    }
+
+
+
 }

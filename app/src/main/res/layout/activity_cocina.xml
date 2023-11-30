@@ -1,96 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingDefaultResource"
     android:background="#FFFFFF"
     >
-
     <androidx.cardview.widget.CardView
         android:id="@+id/app_bar_menu"
         android:layout_width="match_parent"
-        android:layout_height="155dp"
-        android:layout_marginBottom="592dp"
+        android:layout_height="158dp"
         app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-2dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/rv"
-            android:scaleType="centerCrop"
-            />
-
+            android:scaleType="centerCrop" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#83000000"
-            android:text="bnklkjhg"
             android:textColor="#0093000A"
-
-            android:textSize="25dp" />
-
-
-
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:paddingTop="10dp"
-            android:drawableTint="@color/white"
-            android:backgroundTint="#00FFFFFF"
-            android:drawableTop="@drawable/baseline_keyboard_backspace_24"/>
+         />
 
         <TextView
-
-            android:textStyle="bold"
             android:id="@+id/textView3"
-            android:layout_width="212dp"
+            android:layout_width="match_parent"
             android:layout_height="78dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="20dp"
-            android:text="Ordenes disponibles"
+            android:text="Ordenes\ndisponibles"
             android:textColor="#D2FAFAFA"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.777"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="MissingConstraints" />
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_margin="10dp"
+            />
     </androidx.cardview.widget.CardView>
 
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        >
+        <Button
+            android:text="En espera"
+            android:id="@+id/btn_espera"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="#FDD3163C"
+            android:layout_margin="2dp"
+            />
+        <Button
+            android:text="Atendido"
+            android:id="@+id/btn_atend"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="#FF9800"
+            android:layout_margin="2dp"
+            />
+        <Button
+            android:text="Cancelado"
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/green"
+            android:layout_margin="2dp"
+            />
+
+    </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_Cocina"
-        android:layout_width="377dp"
-        android:layout_height="593dp"
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/app_bar_menu"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerMesasCocina"
             android:layout_width="match_parent"
-            android:layout_height="586dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintTop_toTopOf="parent"
             tools:itemCount="6"
             tools:listitem="@layout/item_mesas" />
 
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</LinearLayout>

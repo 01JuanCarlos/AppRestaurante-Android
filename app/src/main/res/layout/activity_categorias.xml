@@ -1,65 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fondo_cat"
+    android:orientation="vertical"
     >
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/app_bar_menu"
-        layout="@layout/app_bar_menu"
-        android:layout_width="414dp"
-        android:layout_height="95dp"
-        android:backgroundTint="#00000000"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="CATEGORIAS"
+        android:drawableLeft="@drawable/baseline_arrow_back_ios_24"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="31dp"
-            android:gravity="center"
-            android:text="CATEGORIAS"
-            android:textColor="#FFFFFF"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/btnCat"
-            android:layout_width="94dp"
-            android:layout_height="108dp"
-            android:paddingTop="20dp"
-            android:backgroundTint="#002D2E2E"
-            android:drawableTop="@drawable/baseline_arrow_back_ios_24"
-            app:cornerRadius="0dp" />
-
-    </androidx.cardview.widget.CardView>
-
+        app:layout_constraintVertical_bias="0.022"
+      />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCat"
-        android:layout_width="339dp"
-        android:layout_height="508dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547"
-        tools:itemCount="6"
+        app:layout_constraintVertical_bias="1.0"
+        tools:itemCount="4"
         tools:listitem="@layout/item_categorias" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -40,14 +40,20 @@ class PedidosActivity: AppCompatActivity(),ConsumoAdapter.ItemClickConsumo
         recyclePedido.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
 
+        val btn_Entrega=findViewById<Button>(R.id.btn_entrega)
+
         viewModel.listConsumoMutable?.observe(this){ pedidos->
 
-            pedidos?.let{
-                adapter.setConsumo(pedidos)
-            }
-        }
+         /*   pedidos?.let{
 
-        val btn_Entrega=findViewById<Button>(R.id.btn_entrega)
+
+            }*/
+            if(pedidos.isNotEmpty()) {
+                adapter.setConsumo(pedidos)
+                btn_Entrega.isEnabled=true
+            }
+            }
+
         btn_Entrega.setOnClickListener{
             alerta()
         }

@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.TypedValue
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TableLayout
@@ -39,7 +41,7 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
         viewModel.getConsumoID(id)
 
 
-
+        val texto=findViewById<TextView>(R.id.textView3)
 
 
         val recyclerNews=findViewById<RecyclerView>(R.id.recyclerConsumo)
@@ -48,11 +50,16 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
         recyclerNews.layoutManager= LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL,false)
    //     val text_centro=findViewById<TextView>(R.id.tex_title)
+        val btn_cancelacion =findViewById<Button>(R.id.btn_cancelacion)
 
         viewModel.listConsumoMutable.observe(this){listProd->
             if(listProd.isNotEmpty()){
                 adapter.setConsumo(listProd)
+                texto.visibility = View.GONE
+                btn_cancelacion.isEnabled=true
             }
+
+
         }
 
        /* viewModel.listMesasMutable.observe(this) { listmesa ->
@@ -94,10 +101,9 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
         }
 
 
-        val btn_cancelacion =findViewById<Button>(R.id.btn_cancelacion)
+
         btn_cancelacion.setOnClickListener{
             alert()
-
         }
 
     }
@@ -150,17 +156,22 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
            TableRow.LayoutParams.WRAP_CONTENT
        )
        params.setMargins(10, 10, 10, 10) // Ajusta los márgenes según tu preferencia
+       val size=resources.getDimension(R.dimen.tamaño_texto_dp)
        // Crear fila para encabezados
        val headerRow = TableRow(this)
 
        val nombreHeader = TextView(this)
        nombreHeader.text = "Nombre"
+       nombreHeader.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
        val cantHeader = TextView(this)
        cantHeader.text = "Cantidad"
+       cantHeader.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
        val precioHeader = TextView(this)
        precioHeader.text = "Precio"
+       precioHeader.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
        val importHeader = TextView(this)
        importHeader.text = "Importe"
+       importHeader.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
        // Aplicar los márgenes a cada encabezado
        nombreHeader.layoutParams = params
        cantHeader.layoutParams = params
@@ -191,15 +202,19 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
 
                    val nombreTextView = TextView(this)
                    nombreTextView.text = nombre
+                   nombreTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
                    val cantTextView = TextView(this)
                    cantTextView.text = cant.toString()
+                   cantTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
                    val precioTextView = TextView(this)
                    precioTextView.text = precio.toString()
+                   precioTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
 
                    val totalPrecio = cant * precio // Calcular el precio total por producto
 
                    val totalPrecioTextView = TextView(this)
                    totalPrecioTextView.text = totalPrecio.toString()
+                   totalPrecioTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
 
                    // Agregar los TextViews a la fila
                    tableRow.addView(nombreTextView)
@@ -216,8 +231,10 @@ class ConsumoActivity : AppCompatActivity(),ConsumoAdapter.ItemClickConsumo {
 
                val totalLabel = TextView(this)
                totalLabel.text = "Total a pagar:"
+               totalLabel.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
                val totalValue = TextView(this)
                totalValue.text = totalAPagar.toString()
+               totalValue.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size)
 
                // Agregar los TextViews a la fila del total a pagar
                totalRow.addView(totalLabel)

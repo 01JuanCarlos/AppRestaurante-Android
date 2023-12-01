@@ -48,6 +48,8 @@ class CocinaActivity : AppCompatActivity() , CocinaAdapter.ItemClickListener
                 adapter.setMesa(mesa)
             }
         }
+
+
         espera.setOnClickListener{
             ViewModel.getEstado("En espera")
         }

@@ -112,7 +112,7 @@
     android:id="@+id/textView3"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:text="Orden vacia"
+    android:text="Sin consumo"
     android:textColor="#13629F"
     android:textSize="35dp"
     android:gravity="center"

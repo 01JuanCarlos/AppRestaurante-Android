@@ -37,6 +37,23 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
 
         val recyclerNews=findViewById<RecyclerView>(R.id.recyclerMesas)
         val adapter=MesaAdapter(this)
+
+        val espera=findViewById<Button>(R.id.btn_espera)
+        val atendido=findViewById<Button>(R.id.btn_atend)
+        val cancelado=findViewById<Button>(R.id.btn_cancel)
+
+
+        espera.setOnClickListener{
+            viewModel.getEstado("En espera")
+        }
+        atendido.setOnClickListener{
+            viewModel.getEstado("Atendido")
+        }
+        cancelado.setOnClickListener{
+            viewModel.getEstado("Cancelado")
+        }
+
+
         recyclerNews.adapter=adapter
         recyclerNews.layoutManager=LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL,false)
@@ -47,10 +64,11 @@ class MesasActivity : AppCompatActivity(), MesaAdapter.ItemClickMesa {
                 numeros.add(numero)
             }
             if(listMesas.isNotEmpty()){
-
                 adapter.setMesa(listMesas)
             }
         }
+
+
         val btnadd = findViewById<ImageButton>(R.id.btn_add)
         btnadd.setOnClickListener{
             RegistrarMesa()

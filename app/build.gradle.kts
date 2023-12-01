@@ -9,6 +9,14 @@ android {
     namespace = "com.cibertec.apprestaurante"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding=true
+    }
+    dataBinding{
+        enable=true
+    }
+
+
     defaultConfig {
         applicationId = "com.cibertec.apprestaurante"
         minSdk = 26
@@ -78,6 +86,13 @@ dependencies {
     //Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
-    //
+    //animacion actualizar
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+    //camara
+    implementation("androidx.camera:camera-view:1.3.0-alpha23")
+    implementation("androidx.camera:camera-core:1.3.0")
+    implementation("androidx.camera:camera-camera2:1.3.0")
+
+
 }

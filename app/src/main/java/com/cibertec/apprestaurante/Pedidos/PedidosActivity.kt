@@ -4,8 +4,10 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.widget.Button
 import android.widget.TableLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,6 +44,8 @@ class PedidosActivity: AppCompatActivity(),ConsumoAdapter.ItemClickConsumo
 
         val btn_Entrega=findViewById<Button>(R.id.btn_entrega)
 
+        val texto=findViewById<TextView>(R.id.textView4)
+
         viewModel.listConsumoMutable?.observe(this){ pedidos->
 
          /*   pedidos?.let{
@@ -50,6 +54,8 @@ class PedidosActivity: AppCompatActivity(),ConsumoAdapter.ItemClickConsumo
             }*/
             if(pedidos.isNotEmpty()) {
                 adapter.setConsumo(pedidos)
+                texto.visibility = View.GONE
+
                 btn_Entrega.isEnabled=true
             }
             }

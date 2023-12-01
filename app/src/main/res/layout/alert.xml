@@ -16,31 +16,24 @@
         <EditText
             android:id="@+id/edtNumero"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:hint="Número de mesa"
             android:maxLines="1"
-
             android:inputType="number"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp" />
+           />
 
         <EditText
             android:id="@+id/edtNombre"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content"
+
             android:fontFamily="sans-serif"
             android:gravity="top|left"
             android:hint="Nombre de mesa"
             android:inputType="textMultiLine"
             android:lines="8"
-            android:maxLines="10"
-            android:minLines="6"
+            android:maxLines="2"
+            android:minLines="1"
             android:scrollbars="vertical" />
 
         <Button
